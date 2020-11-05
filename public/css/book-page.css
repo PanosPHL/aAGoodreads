@@ -17,6 +17,9 @@ body {
     display: grid;
     grid-template-columns: repeat(10, 1fr);
     grid-template-rows: repeat(12, 6vh);
+
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 .content-container {
@@ -25,6 +28,8 @@ body {
     grid-template-columns: repeat(4, 1fr);
     grid-column: 3 / 8;
     grid-row: 1 / 13;
+
+    padding-left: 40px;
 }
 
 .info-and-cover-container {
@@ -36,16 +41,17 @@ body {
 .info-container {
     display: flex;
     flex-direction: column;
-    margin-left: 9%;
+    margin-left: 90px;
     justify-content: space-around;
     height: 80%;
 }
 
 #cover {
     grid-area: cover;
-    width: 150px;
-    height: 213px;
-    margin: 0px 0px 10px;
+    width: 113px;
+    height: 170px;
+    margin-top: 10px;
+    margin-left: 20px;
 }
 
 .star {
@@ -62,4 +68,18 @@ body {
 
 #summary {
     grid-column: 2 / 5;
+}
+
+.review-container {
+    grid-row-start: 12;
+    grid-column: 2 / 4;
+}
+
+.review-info {
+    display: flex;
+    align-items: center;
+}
+
+.filled-star {
+    fill: yellow;
 }
