@@ -14,23 +14,31 @@ body {
 }
 
 .page-container {
-    font-family: 'Merriweather', serif;
     display: grid;
-    justify-content: center;
-    text-align: left;
-    grid-template-columns: auto;
-    grid-template-rows: auto;
-    grid-template-areas:
-        'cover title .'
-        'shelves info .'
-        '. author .'
-        '. summary .'
-        '. reviews .'
-    ;
-    margin-top: 10px;
-    margin-right: 10px;
-    margin-bottom: 3vh;
-    margin-left: 20px;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(12, 6vh);
+}
+
+.content-container {
+    display: grid;
+    grid-template-rows: repeat(12, 6vh);
+    grid-template-columns: repeat(4, 1fr);
+    grid-column: 3 / 8;
+    grid-row: 1 / 13;
+}
+
+.info-and-cover-container {
+    display: flex;
+    grid-column: 1 / 5;
+    grid-row: 1 / 5;
+}
+
+.info-container {
+    display: flex;
+    flex-direction: column;
+    margin-left: 9%;
+    justify-content: space-around;
+    height: 80%;
 }
 
 #cover {
@@ -40,119 +48,18 @@ body {
     margin: 0px 0px 10px;
 }
 
-.sum-container {
-    grid-area: summary;
-    font-family: 'Merriweather', serif;
-    width: 60%;
+.star {
+    height: 20px;
 }
 
-.review-container {
-    grid-area: reviews;
-    margin-top: 20px;
-    margin-left: 2vw;
-    width: 60%;
+.star-container {
+    height: 20px;
 }
 
-#review-title {
-    font-size: 18px;
-    margin-bottom: 10px;
-}
+.select-shelves-placeholder {
 
-
-#user-info {
-    font-size: 10px;
-    color: #999999;
-}
-
-#title {
-    font-family: 'Merriweather', serif;
-    font-size: 24px;
-    font-weight: bold;
-    color: #333333;
-    line-height: 1.2;
-    display: grid;
-}
-
-#series {
-    font-family: 'Merriweather', serif;
-    color: #999999;
-    font-size: 18px;
-}
-
-#author {
-    font-family: 'Merriweather', serif;
-    font-weight: lighter;
-    font-size: 16px;
 }
 
 #summary {
-    margin-left: 2vw;
-}
-
-.title-container {
-    grid-area: title;
-    width: 100%;
-    margin-top: 10px;
-    margin-left: 2vw;
-    margin-right: 20px;
-}
-
-.series-container {
-    grid-area: info;
-    margin-top: 0px;
-    padding-top: 0px;
-    width: 60%;
-}
-
-.author-container {
-    grid-area: author;
-    width: 60%;
-}
-
-
-.select-shelves-placeholder {
-    position: relative;
-    grid-area: shelves;
-    font-size: 1.42vh;
-    height: 3vh;
-    background-color: #DFDFDF;
-    border-radius: 4px;
-    margin-left: 5px;
-    margin-right: 5px;
-    padding-left: 1.6vw;
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    z-index: 0;
-}
-
-.shelf-arrow-placeholder {
-    display: inline-block;
-    margin-left: 0.3vw;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-}
-
-.select-shelves-placeholder > span {
-    display: inline-block;
-    padding: 0.6vh 0 0 0;
-}
-
-.shelve-list-container {
-    position: absolute;
-    background-color: rgb(233, 233, 233);
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    width: 10.5vw;
-    top: 3.2vh;
-    border-radius: 4px;
-    left: 0vw;
-    z-index: 1;
-}
-
-.shelves__dropdown--default-checks, .shelves__dropdown--created-shelves {
-    list-style: none;
-    padding-left: 1.4vw;
-}
-
-span.saving {
-    padding-left: 2.4vw;
+    grid-column: 2 / 5;
 }

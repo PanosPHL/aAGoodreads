@@ -1,4 +1,4 @@
-const id = Number(new URL (window.location).toString().split('/')[4]);
+const id = Number(window.location.pathname.split('/')[2]);
 let sent = true;
 const cover = document.getElementById('cover');
 const title = document.getElementById('title');
@@ -22,7 +22,7 @@ async function getBook() {
     title.innerHTML = book.title;
     summary.innerHTML = book.summary;
     authors.innerHTML = `By ${author.firstName} ${author.lastName}`;
-    series.innerHTML = `(${seriesData.name} Series #${book.id})`;
+    series.innerHTML = `${seriesData.name} Series`;
 };
 
 async function getReviews() {
@@ -114,3 +114,7 @@ manageShelves.addEventListener('click', async event => {
 getBook();
 getReviews();
 populateShelves();
+
+document.addEventListener('DOMContentLoaded', async event => {
+
+})
