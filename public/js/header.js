@@ -1,4 +1,5 @@
 const [http, host, post, main, sub] = new URL(window.location).toString().split('/');
+const logout = document.getElementById('logout');
 
 document.addEventListener('DOMContentLoaded', () => {
     const search = document.getElementById("myInput");
@@ -13,10 +14,26 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    const dropContainer = document.querySelector('.dropContainer');
+    const dropContainers = document.getElementsByClassName('dropContainer');
+    console.log(dropContainers);
 
-    dropContainer.addEventListener('click', event => {
+    dropContainers[0].addEventListener('click', event => {
         document.querySelector('.dropContent').classList.toggle('hidden');
         dropContainer.classList.toggle('selected');
     });
+
+    dropContainers[1].addEventListener('click', event => {
+        document.querySelector('.dropProfileContent').classList.toggle('hidden');
+        dropContainer.classList.toggle('selected');
+    });
+});
+
+logout.addEventListener('click', async e => {
+    const res = await fetch('/api/users/logout', {
+        method: 'DELETE'
+    });
+
+    if (res.ok) {
+        window.location.href = '/';
+    }
 });

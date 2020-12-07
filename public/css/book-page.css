@@ -30,7 +30,7 @@ body {
     margin-top: 10px;
     margin-right: 10px;
     margin-bottom: 3vh;
-    margin-left: 20px;
+    margin-left: 430px;
 }
 
 #cover {
@@ -44,6 +44,7 @@ body {
     grid-area: summary;
     font-family: 'Merriweather', serif;
     width: 60%;
+    margin-top: -121px;
 }
 
 .review-container {
@@ -91,10 +92,10 @@ body {
 
 .title-container {
     grid-area: title;
-    width: 100%;
+    width: 69%;
+    height: 90px;
     margin-top: 10px;
     margin-left: 2vw;
-    margin-right: 20px;
 }
 
 .series-container {
@@ -109,6 +110,9 @@ body {
     width: 60%;
 }
 
+.cover-container {
+    margin-top: 13px;
+}
 
 .select-shelves-placeholder {
     position: relative;
@@ -119,7 +123,7 @@ body {
     border-radius: 4px;
     margin-left: 5px;
     margin-right: 5px;
-    padding-left: 1.6vw;
+    padding-left: 0.6vw;
     border: 1px solid rgba(0, 0, 0, 0.2);
     z-index: 0;
 }

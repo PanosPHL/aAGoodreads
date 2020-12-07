@@ -29,7 +29,7 @@ const validateAuth = [
     .isEmail(),
   check("password", "Password field must be six or more characters.")
     .exists()
-    .isLength({min: 6, max: 70}),
+    .isLength({ min: 6, max: 70 }),
 ]
 
 //signing up
@@ -52,7 +52,7 @@ router.post("/", validateName, validateAuth, handleValidationErrors, routeHandle
   await createDefaultBookshelves(user);
 
   const token = await getUserToken(user);
-  res.cookie('token', token, {maxAge: expiresIn * 1000});
+  res.cookie('token', token, { maxAge: expiresIn * 1000 });
   res.json({ id: user.id, token });
 }));
 
@@ -69,9 +69,15 @@ router.post("/token", validateAuth, handleValidationErrors, routeHandler(async (
     throw err;
   }
   const token = await getUserToken(user);
-  res.cookie('token', token, {maxAge: expiresIn * 1000});
+  res.cookie('token', token, { maxAge: expiresIn * 1000 });
   res.json({ id: user.id, token });
 }));
+
+//logout
+router.delete('/logout', routeHandler(async (req, res) => {
+  res.clearCookie('token');
+  res.json({ message: 'logged out' })
+}))
 
 
 module.exports = router;

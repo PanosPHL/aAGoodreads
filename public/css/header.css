@@ -113,6 +113,28 @@ header {
     background-color: rgb(204, 204, 204);
 }
 
+.dropProfileContent {
+    position: absolute;
+    background-color: white;
+    top: 6.6vh;
+    left: 1.7vw;
+    border-radius: 4px;
+    margin-top: 13px;
+}
+
+.dropProfileContent li {
+    padding-left: 0.4vw;
+    padding-right: 1vw;
+    padding-bottom: 0.6vh;
+    padding-top: 0.8vh;
+    font-size: 1.6vh;
+    height: 2.4vh;
+}
+
+.dropProfileContent li:hover {
+    background-color: rgb(204, 204, 204);
+}
+
 .hidden {
     display: none;
 }
