@@ -45,6 +45,7 @@ router.get('/:id(\\d+)/reviews', routeHandler(async (req, res) => {
 }));
 
 router.post('/:id(\\d+)', routeHandler(async (req, res) => {
+    console.log(req.body);
     const bookId = parseInt(req.params.id);
     const { token } = req.cookies;
     const data = await jwt.verify(token, secret);

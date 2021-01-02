@@ -1,85 +1,89 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Red+Rose:wght@300;400;700&display=swap');
 
 * {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 }
 
 body {
-    font-family: Helvetica;
+  font-family: Helvetica;
 }
 
 .hidden {
-    display: none;
+  display: none;
 }
 
 .page-container {
-    display: grid;
-    grid-template-columns: repeat(10, 1fr);
-    grid-template-rows: repeat(12, 6vh);
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(12, 6vh);
 
-    margin-top: 30px;
-    margin-bottom: 30px;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .content-container {
-    display: grid;
-    grid-template-rows: repeat(12, 6vh);
-    grid-template-columns: repeat(4, 1fr);
-    grid-column: 3 / 8;
-    grid-row: 1 / 13;
+  display: grid;
+  grid-template-rows: repeat(12, 6vh);
+  grid-template-columns: repeat(4, 1fr);
+  grid-column: 3 / 8;
+  grid-row: 1 / 13;
 
-    padding-left: 40px;
+  padding-left: 40px;
 }
 
 .info-and-cover-container {
-    display: flex;
-    grid-column: 1 / 5;
-    grid-row: 1 / 5;
+  display: flex;
+  grid-column: 1 / 5;
+  grid-row: 1 / 5;
 }
 
 .info-container {
-    display: flex;
-    flex-direction: column;
-    margin-left: 90px;
-    justify-content: space-around;
-    height: 80%;
+  display: flex;
+  flex-direction: column;
+  margin-left: 90px;
+  justify-content: space-around;
+  height: 80%;
 }
 
 #cover {
-    grid-area: cover;
-    width: 113px;
-    height: 170px;
-    margin-top: 10px;
-    margin-left: 20px;
+  grid-area: cover;
+  width: 113px;
+  height: 170px;
+  margin-top: 10px;
+  margin-left: 20px;
 }
 
 .star {
-    height: 20px;
+  height: 20px;
 }
 
 .star-container {
-    height: 20px;
+  height: 20px;
 }
 
 .select-shelves-placeholder {
-
 }
 
 #summary {
-    grid-column: 2 / 5;
+  grid-column: 2 / 5;
 }
 
 .review-container {
-    grid-row-start: 12;
-    grid-column: 2 / 4;
+  grid-row-start: 12;
+  grid-column: 2 / 4;
 }
 
 .review-info {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .filled-star {
-    fill: yellow;
+  fill: yellow;
+}
+
+.summary-paragraph {
+  text-indent: 2rem;
+  line-height: 1.4rem;
 }
