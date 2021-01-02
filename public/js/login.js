@@ -1,4 +1,5 @@
 const form = document.getElementById('login');
+const demoButton = document.getElementById('demo');
 
 form.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -22,4 +23,20 @@ form.addEventListener('submit', async (e) => {
     }
 
     window.location.href = '/my-books';
+});
+
+demoButton.addEventListener('click', async e => {
+    const body = { email: 'santa@gmail.com', password: 'password' };
+
+    const res = await fetch('/api/users/token', {
+        method: 'POST',
+        body: JSON.stringify(body),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    });
+
+    if (res.ok) {
+        window.location.href = '/my-books';
+    }
 });

@@ -198,6 +198,7 @@ h1 {
     height: 40px;
     width: 290px;
     border-radius: 6px;
+    cursor: pointer;
 }
 
 .middle-content__right {
