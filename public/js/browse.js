@@ -133,7 +133,7 @@ const editOrWriteReview = (book) => {
         return `<a class='review-link' href='/reviews/add/book/${book.id}'>Write a review</a>`
     }
 
-    return `<a class='review-link' href='/reviews/edit/book/${book.id}'>Edit your review</a>`;
+    return `<a class='review-link' href='/reviews/add/book/${book.id}'>Add your review</a>`;
 }
 
 function compareState(state1, state2) {

@@ -1,117 +1,161 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Red+Rose:wght@300;400;700&display=swap');
 
+:root {
+  --grey-text: #808080;
+  --header-text: #382110;
+}
+
 * {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 }
 
 body {
-    font-family: Helvetica;
+  font-family: Helvetica;
 }
 
 .hidden {
-    display: none;
+  display: none;
 }
 
 .page-container {
-    font-family: 'Merriweather', serif;
-    display: grid;
-    justify-content: center;
-    text-align: left;
-    grid-template-columns: auto;
-    grid-template-rows: auto;
-    grid-template-areas:
-        'cover title .'
-        'shelves info .'
-        '. author .'
-        '. summary .'
-        '. reviews .'
-    ;
-    margin-top: 10px;
-    margin-right: 10px;
-    margin-bottom: 3vh;
-    margin-left: 430px;
+  padding: 4vh 20vw;
+}
+
+.content-container {
+  display: flex;
+  flex-direction: column;
+  padding-right: 8vw;
+}
+
+.info-and-cover-container {
+  display: flex;
+}
+
+.info-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+  margin-top: 30px;
+}
+
+.book-content-container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 36px;
+  min-height: 48vh;
+}
+
+.cover-and-shelf-container {
+  display: flex;
+  flex-direction: column;
+  min-width: 174px;
+  align-items: center;
 }
 
 #cover {
-    grid-area: cover;
-    width: 150px;
-    height: 213px;
-    margin: 0px 0px 10px;
-}
-
-.sum-container {
-    grid-area: summary;
-    font-family: 'Merriweather', serif;
-    width: 60%;
-    margin-top: -121px;
-}
-
-.review-container {
-    grid-area: reviews;
-    margin-top: 20px;
-    margin-left: 2vw;
-    width: 60%;
-}
-
-#review-title {
-    font-size: 18px;
-    margin-bottom: 10px;
+  grid-area: cover;
+  max-width: 138px;
+  height: 210px;
 }
 
 
-#user-info {
-    font-size: 10px;
-    color: #999999;
+.star {
+  height: 20px;
 }
 
-#title {
-    font-family: 'Merriweather', serif;
-    font-size: 24px;
-    font-weight: bold;
-    color: #333333;
-    line-height: 1.2;
-    display: grid;
-}
-
-#series {
-    font-family: 'Merriweather', serif;
-    color: #999999;
-    font-size: 18px;
-}
-
-#author {
-    font-family: 'Merriweather', serif;
-    font-weight: lighter;
-    font-size: 16px;
+.star-container {
+  height: 20px;
+  margin-left: 10px;
+  margin-top: -4px;
 }
 
 #summary {
-    margin-left: 2vw;
+  width: 100%;
+  margin-top: 80px;
 }
 
-.title-container {
-    grid-area: title;
-    width: 69%;
-    height: 90px;
-    margin-top: 10px;
-    margin-left: 2vw;
+.review-info {
+  display: flex;
+  align-items: center;
 }
 
-.series-container {
-    grid-area: info;
-    margin-top: 0px;
-    padding-top: 0px;
-    width: 60%;
+.filled-star {
+  fill: yellow;
 }
 
-.author-container {
-    grid-area: author;
-    width: 60%;
+.summary-paragraph {
+  line-height: 1.6rem;
+  font-size: 1rem;
 }
 
-.cover-container {
-    margin-top: 13px;
+#title {
+  font-size: 2rem;
+}
+
+#series {
+  font-size: 1.4rem;
+}
+
+.review-count {
+  margin-left: 10px;
+}
+
+.review-row {
+  display: flex;
+  padding: 1rem;
+  border-bottom: 1px solid #9a9a9a;
+}
+
+.review-row-info {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+#review-list {
+  padding: 1rem 18% 0rem 1rem;
+}
+
+.review-row-content {
+  width: 100%;
+  margin-left: 2rem;
+}
+
+.first-review-row {
+  padding-top: 0;
+}
+
+.review-text {
+  margin-top: 10px;
+  font-size: 0.8rem;
+}
+
+.user-name {
+  display: inline-block;
+  color: var(--grey-text);
+}
+
+.review-date {
+  color: #c1bbbb;
+}
+
+.filled-user-star {
+  fill: #fa604a;
+}
+.user-stars {
+  display: inline-block;
+  margin-bottom: -6px;
+}
+
+.user-star {
+  height: 16px;
+}
+
+#author,
+.review-info {
+  color: var(--grey-text);
 }
 
 .select-shelves-placeholder {
@@ -128,35 +172,65 @@ body {
     z-index: 0;
 }
 
-.shelf-arrow-placeholder {
-    display: inline-block;
-    margin-left: 0.3vw;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
+#title,
+#series,
+.review-header {
+  color: var(--header-text);
 }
 
-.select-shelves-placeholder > span {
-    display: inline-block;
-    padding: 0.6vh 0 0 0;
+.review-header {
+  margin-left: 2rem;
+}
+
+.body-shelves-container {
+  position: relative;
+  min-height: 18px;
+  padding: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  min-width: 192px;
+  font-size: 1rem;
+  background-color: #dfdfdf;
+  margin-top: 2rem;
 }
 
 .shelve-list-container {
-    position: absolute;
-    background-color: rgb(233, 233, 233);
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    width: 10.5vw;
-    top: 3.2vh;
-    border-radius: 4px;
-    left: 0vw;
-    z-index: 1;
+  position: absolute;
+  left: -2px;
+  top: 31px;
+  padding: 14px 0 14px 22px;
+  background-color: rgb(233, 233, 233);
+  z-index: 0;
+  border-radius: 4px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  min-width: 180px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
-.shelves__dropdown--default-checks, .shelves__dropdown--created-shelves {
-    list-style: none;
-    padding-left: 1.4vw;
+.select-shelves-placeholder {
+  margin-left: 16px;
 }
 
-span.saving {
-    padding-left: 2.4vw;
+.shelve-list-container > ul {
+  list-style: none;
+}
+
+.review-link-button {
+  margin-top: 2rem;
+  text-decoration: none;
+  color: black;
+  background-color: #dfdfdf;
+  padding: 0.4rem;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.no-pointer-events {
+  pointer-events: none;
+}
+
+.saving {
+  margin-left: 60px;
 }
