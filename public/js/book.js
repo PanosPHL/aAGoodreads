@@ -52,7 +52,7 @@ function getReviewRow(review, i) {
 
   if (currentUserId === userId) {
     reviewLink.innerText = 'Edit Your Review';
-    reviewLink.href = `http://localhost:8080/reviews/edit/book/${id}`;
+    reviewLink.href = `/reviews/edit/book/${id}`;
   }
 
   const revContainer = document.createElement('div');
@@ -252,7 +252,7 @@ document.addEventListener('DOMContentLoaded', async (event) => {
 
   if (!reviewLink.innerText) {
     reviewLink.innerText = 'Add a Review';
-    reviewLink.href = `http://localhost:8080/reviews/add/book/${id}`;
+    reviewLink.href = `/reviews/add/book/${id}`;
   }
 
   manageShelves.addEventListener('click', async ({ target }) => {
