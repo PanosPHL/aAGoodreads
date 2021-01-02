@@ -4,6 +4,7 @@ let bookData;
 let reviews;
 let bookshelves;
 let currentUserId;
+let prevState = {};
 
 const cover = document.getElementById('cover');
 const title = document.getElementById('title');
@@ -15,12 +16,25 @@ const reviewCount = document.querySelector('.review-count');
 const avgRating = document.querySelector('.avg-rating');
 const manageShelves = document.querySelector('.select-shelves-placeholder');
 const reviewLink = document.querySelector('.review-link-button');
+const shelveListContainer = document.querySelector('.shelve-list-container');
 
 async function getBook() {
   const res = await fetch(`/api/books/${id}`);
   const data = await res.json();
   bookData = data;
   return bookData;
+}
+
+function compareState(state1, state2) {
+  if (typeof state1 === 'string' && typeof state2 === 'string') {
+    return state1 !== state2;
+  }
+
+  if (state1.length !== state2.length) {
+    return true;
+  }
+
+  return !state1.every((val) => state2.includes(val));
 }
 
 function newlinePs(summary) {
@@ -201,7 +215,6 @@ function populateShelves() {
   let shelfStr = '';
   for (const shelf of bookshelves) {
     const bookIds = shelf.Books.map((book) => Number(book.id));
-    console.log(shelf);
     if (shelf.defaultShelf) {
       const shelfItem = document.getElementById(
         shelf.name.toLowerCase().split(' ').join('-')
@@ -250,33 +263,47 @@ document.addEventListener('DOMContentLoaded', async (event) => {
     ) {
       return;
     }
+
+    const originalInnerHTML =
+      'Manage Booshelves <span class="shelf-arrow-placeholder">▾</span>';
+
     document.querySelector('.shelve-list-container').classList.toggle('hidden');
     const formData = new FormData(document.querySelector('form'));
-    if (sent) {
-      sent = false;
+
+    if (!shelveListContainer.classList.contains('hidden')) {
+      prevState = {
+        defaultShelf: formData.getAll('defaultShelf'),
+        createdShelf: formData.getAll('createdShelf'),
+      };
     } else {
-      sent = true;
-      const text = document.querySelector('.bookshelves-text');
-      text.innerHTML = 'Saving...';
-      text.classList.add('saving');
-      const shelfArrow = document.querySelector('.shelf-arrow-placeholder');
-      shelfArrow.innerHTML = '';
-      const body = {};
-      for (let key of formData.keys()) {
-        body[key] = formData.getAll(key);
-      }
+      const body = {
+        defaultShelf: formData.getAll('defaultShelf'),
+        createdShelf: formData.getAll('createdShelf'),
+      };
 
-      const res = await fetch(`/api/books/${id}`, {
-        method: 'POST',
-        body: JSON.stringify(body),
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
+      if (
+        compareState(prevState['defaultShelf'], body['defaultShelf']) ||
+        compareState(prevState['createdShelf'], body['createdShelf'])
+      ) {
+        manageShelves.innerHTML = 'Saving...';
+        manageShelves.classList.add('no-pointer-events');
+        manageShelves.classList.add('saving');
 
-      if (res.ok) {
-        text.innerHTML = 'Manage Bookshelves';
-        shelfArrow.innerHTML = '▾';
+        const res = await fetch(`/api/books/${id}`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(body),
+        });
+
+        if (res.ok) {
+          setTimeout(() => {
+            manageShelves.innerHTML = `Manage Bookshelves<span class='self-arrow-placeholder'>▾</span>`;
+            manageShelves.classList.remove('no-pointer-events');
+            manageShelves.classList.remove('saving');
+          }, 250);
+        }
       }
     }
   });

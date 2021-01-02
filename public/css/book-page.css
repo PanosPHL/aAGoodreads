@@ -169,12 +169,12 @@ body {
 
 .body-shelves-container {
   position: relative;
-  height: 2vh;
-  padding: 0.4vh;
+  min-height: 18px;
+  padding: 4px;
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 4px;
-  width: 10vw;
-  font-size: 1.8vh;
+  min-width: 192px;
+  font-size: 1rem;
   background-color: #dfdfdf;
   margin-top: 2rem;
 }
@@ -182,20 +182,20 @@ body {
 .shelve-list-container {
   position: absolute;
   left: -2px;
-  top: 3.4vh;
-  padding: 1.4vh 0 1.4vh 2.2vh;
+  top: 31px;
+  padding: 14px 0 14px 22px;
   background-color: rgb(233, 233, 233);
   z-index: 0;
   border-radius: 4px;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-  width: 9.4vw;
+  min-width: 180px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
 }
 
 .select-shelves-placeholder {
-  margin-left: 10px;
+  margin-left: 16px;
 }
 
 .shelve-list-container > ul {
@@ -210,4 +210,12 @@ body {
   padding: 0.4rem;
   border-radius: 8px;
   border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.no-pointer-events {
+  pointer-events: none;
+}
+
+.saving {
+  margin-left: 60px;
 }
