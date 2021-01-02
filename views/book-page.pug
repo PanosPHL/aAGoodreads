@@ -9,47 +9,51 @@ block content
 	.page-container
 		.content-container
 			.info-and-cover-container
-				img#cover
-				.info-container
-					h1#title
-					h2#series
-					#author
-					.review-info
-						span.avg-rating
-						.stars.star-container
-							<svg class='star' id='star-view-1' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio>
-							<path id='star-path-1' d="M54,5 86,105 1,43H107L22,105" fill="#808080"/>
-							</svg>
-							<svg class='star' id='star-view-2' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio>
-							<path id='star-path-2' d="M54,5 86,105 1,43H107L22,105" fill="#808080"/>
-							</svg>
-							<svg class='star' id='star-view-3' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio>
-							<path id='star-path-3' d="M54,5 86,105 1,43H107L22,105" fill="#808080"/>
-							</svg>
-							<svg class='star' id='star-view-4' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio>
-							<path id='star-path-4' d="M54,5 86,105 1,43H107L22,105" fill="#808080"/>
-							</svg>
-							<svg class='star' id='star-view-5' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio>
-							<path id='star-path-5' d="M54,5 86,105 1,43H107L22,105" fill="#808080"/>
-							</svg>
-						span.review-count
-			div(class='select-shelves-placeholder') <span class='bookshelves-text'>Manage Bookshelves</span>
-				span(class='shelf-arrow-placeholder') ▾
-				form
-					.shelve-list-container.hidden
-						ul.shelves__dropdown--default-checks
-							li.currently-reading
-								label(for='currently-reading') Currently Reading
-								input(type='radio' id='currently-reading' name='defaultShelf')
-							li.read
-								label(for='read') Read
-								input(type='radio' id='read' name='defaultShelf')
-							li.want-to-read
-								label(for='want-to-read') Want to Read
-								input(type='radio' id='want-to-read' name='defaultShelf')
-						ul.shelves__dropdown--created-shelves
-			#summary
+				.cover-and-shelf-container
+					img#cover
+					div(class='select-shelves-placeholder') <span class='bookshelves-text'>Manage Bookshelves</span>
+						span(class='shelf-arrow-placeholder') ▾
+					form
+						.shelve-list-container.hidden
+							ul.shelves__dropdown--default-checks
+								li.currently-reading
+									label(for='currently-reading') Currently Reading
+									input(type='radio' id='currently-reading' name='defaultShelf')
+								li.read
+									label(for='read') Read
+									input(type='radio' id='read' name='defaultShelf')
+								li.want-to-read
+									label(for='want-to-read') Want to Read
+									input(type='radio' id='want-to-read' name='defaultShelf')
+							ul.shelves__dropdown--created-shelves
+				.book-content-container
+					.review-and-info-container
+						.info-container
+							h1#title
+							h2#series
+							#author
+							.review-info
+								span.avg-rating
+								.stars.star-container
+									<svg class='star' id='star-view-1' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio>
+									<path id='star-path-1' d="M54,5 86,105 1,43H107L22,105" fill="#808080"/>
+									</svg>
+									<svg class='star' id='star-view-2' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio>
+									<path id='star-path-2' d="M54,5 86,105 1,43H107L22,105" fill="#808080"/>
+									</svg>
+									<svg class='star' id='star-view-3' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio>
+									<path id='star-path-3' d="M54,5 86,105 1,43H107L22,105" fill="#808080"/>
+									</svg>
+									<svg class='star' id='star-view-4' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio>
+									<path id='star-path-4' d="M54,5 86,105 1,43H107L22,105" fill="#808080"/>
+									</svg>
+									<svg class='star' id='star-view-5' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio>
+									<path id='star-path-5' d="M54,5 86,105 1,43H107L22,105" fill="#808080"/>
+									</svg>
+								span.review-count
+					#summary
 			.review-container
 				h3 Reviews
 				hr
+				a(href="")
 				#review-list

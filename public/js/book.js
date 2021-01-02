@@ -28,6 +28,73 @@ function newlinePs(summary) {
     .join('');
 }
 
+function getReviewRow(review, i) {
+  const {
+    rating,
+    User: { firstName, lastName, id: userId },
+  } = review;
+
+  const revContainer = document.createElement('div');
+  revContainer.classList.add('review-row');
+
+  if (i === 0) {
+    revContainer.classList.add('first-review-row');
+  }
+
+  const reviewRowContent = document.createElement('div');
+  reviewRowContent.classList.add('review-row-content');
+
+  const reviewDetails = document.createElement('div');
+  reviewDetails.classList.add('review-row-info');
+
+  const userAndRating = document.createElement('div');
+  let userRatingStr = `<h4 class='user-name'>${firstName} ${lastName}</h4>`;
+
+  if (rating >= 0 && typeof rating === 'number') {
+    userRatingStr += ' rated it ';
+
+    const starNums = [1, 2, 3, 4, 5];
+
+    let starStr = starNums
+      .map((num) => {
+        return `<svg class='star' id='user-${userId}-star-view-${num}' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio>
+        <path ${
+          num <= review.rating ? 'class="filled-star"' : ''
+        } id='user-${userId}-star-path-${num}' d="M54,5 86,105 1,43H107L22,105" fill="#808080"/>
+        </svg>`;
+      })
+      .join('');
+
+    userRatingStr += starStr;
+  }
+
+  const reviewDate = document.createElement('span');
+  reviewDate.classList.add('review-date');
+  reviewDate.innerText = new Date(review.updatedAt)
+    .toString()
+    .split(' ')
+    .slice(1, 4)
+    .join(' ');
+  userAndRating.innerHTML = userRatingStr;
+
+  const reviewText = document.createElement('p');
+  reviewText.classList.add('review-text');
+
+  reviewText.innerText = review.content;
+
+  const userImage = document.createElement('img');
+
+  userImage.src = '/public/images/default-profile-pic.png';
+
+  reviewDetails.append(userAndRating, reviewDate);
+
+  reviewRowContent.append(reviewDetails, reviewText);
+
+  revContainer.append(userImage, reviewRowContent);
+
+  reviewContent.appendChild(revContainer);
+}
+
 function populateBookContent() {
   const { book } = bookData;
   const userId = bookData.userId;
@@ -50,65 +117,7 @@ async function getReviews() {
 }
 
 function populateReviewContent() {
-  reviews.forEach((review) => {
-    console.log(review);
-    const {
-      rating,
-      User: { firstName, lastName, id: userId },
-    } = review;
-
-    const revContainer = document.createElement('div');
-    revContainer.classList.add('review-row');
-
-    const reviewRowContent = document.createElement('div');
-
-    const reviewDetails = document.createElement('div');
-
-    const userAndRating = document.createElement('div');
-    let userRatingStr = `<strong>${firstName} ${lastName}</strong>`;
-
-    if (rating >= 0 && typeof rating === 'number') {
-      userRatingStr += ' rated it ';
-
-      const starNums = [1, 2, 3, 4, 5];
-
-      let starStr = starNums
-        .map((num) => {
-          return `<svg class='star' id='user-${userId}-star-view-${num}' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio>
-        <path ${
-          num <= review.rating ? 'class="filled-star"' : ''
-        } id='user-${userId}-star-path-${num}' d="M54,5 86,105 1,43H107L22,105" fill="#808080"/>
-        </svg>`;
-        })
-        .join('');
-
-      userRatingStr += starStr;
-    }
-
-    const reviewDate = document.createElement('span');
-    reviewDate.innerText = new Date(review.updatedAt)
-      .toString()
-      .split(' ')
-      .slice(1, 4)
-      .join(' ');
-    userAndRating.innerHTML = userRatingStr;
-
-    const reviewText = document.createElement('p');
-
-    reviewText.innerText = review.content;
-
-    const userImage = document.createElement('img');
-
-    userImage.src = '/public/images/default-profile-pic.png';
-
-    reviewDetails.append(userAndRating, reviewDate);
-
-    reviewRowContent.append(reviewDetails, reviewText);
-
-    revContainer.append(userImage, reviewRowContent);
-
-    reviewContent.appendChild(revContainer);
-  });
+  reviews.forEach((review, i) => getReviewRow(review, i));
 
   let { average, numRatings } = getAvgRating(reviews);
   avgRating.innerHTML = average;
@@ -237,7 +246,8 @@ document.addEventListener('DOMContentLoaded', async (event) => {
       const text = document.querySelector('.bookshelves-text');
       text.innerHTML = 'Saving...';
       text.classList.add('saving');
-      document.querySelector('.shelf-arrow-placeholder').innerHTML = '';
+      const shelfArrow = document.querySelector('.shelf-arrow-placeholder');
+      shelfArrow.innerHTML = '';
       const body = {};
       for (let key of formData.keys()) {
         body[key] = formData.getAll(key);
@@ -252,7 +262,8 @@ document.addEventListener('DOMContentLoaded', async (event) => {
       });
 
       if (res.ok) {
-        window.location.pathname = '/my-books';
+        text.innerHTML = 'Manage Bookshelves';
+        shelfArrow.innerHTML = '▾';
       }
     }
   });

@@ -14,44 +14,45 @@ body {
 }
 
 .page-container {
-  display: grid;
-  grid-template-columns: repeat(10, 1fr);
-  grid-template-rows: repeat(12, 6vh);
-
-  margin-top: 30px;
-  margin-bottom: 30px;
+  padding: 4vh 20vw;
 }
 
 .content-container {
-  display: grid;
-  grid-template-rows: repeat(12, 6vh);
-  grid-template-columns: repeat(4, 1fr);
-  grid-column: 3 / 8;
-  grid-row: 1 / 13;
-
-  padding-left: 40px;
+  display: flex;
+  flex-direction: column;
+  padding-right: 8vw;
 }
 
 .info-and-cover-container {
   display: flex;
-  grid-column: 1 / 5;
-  grid-row: 1 / 5;
 }
 
 .info-container {
   display: flex;
   flex-direction: column;
-  margin-left: 90px;
   justify-content: space-around;
-  height: 80%;
+  height: 100%;
+  margin-top: 30px;
+}
+
+.book-content-container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 36px;
+  min-height: 48vh;
+}
+
+.cover-and-shelf-container {
+  display: flex;
+  flex-direction: column;
+  min-width: 174px;
+  align-items: center;
 }
 
 #cover {
   grid-area: cover;
-  width: 113px;
-  height: 170px;
-  margin-top: 10px;
-  margin-left: 20px;
+  max-width: 138px;
+  height: 210px;
 }
 
 .star {
@@ -60,18 +61,16 @@ body {
 
 .star-container {
   height: 20px;
+  margin-left: 10px;
 }
 
 .select-shelves-placeholder {
+  margin-top: 20px;
 }
 
 #summary {
-  grid-column: 2 / 5;
-}
-
-.review-container {
-  grid-row-start: 12;
-  grid-column: 2 / 4;
+  width: 100%;
+  margin-top: 80px;
 }
 
 .review-info {
@@ -84,6 +83,57 @@ body {
 }
 
 .summary-paragraph {
-  text-indent: 2rem;
-  line-height: 1.4rem;
+  line-height: 1.6rem;
+  font-size: 1rem;
+}
+
+#title {
+  font-size: 2rem;
+}
+
+#series {
+  font-size: 1.4rem;
+}
+
+.review-count {
+  margin-left: 10px;
+}
+
+.review-row {
+  display: flex;
+  padding: 1rem;
+  border-bottom: 1px solid #9a9a9a;
+}
+
+.review-row-info {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+#review-list {
+  padding: 1rem 18% 0rem 1rem;
+}
+
+.review-row-content {
+  width: 100%;
+  margin-left: 2rem;
+}
+
+.first-review-row {
+  padding-top: 0;
+}
+
+.review-text {
+  margin-top: 10px;
+  font-size: 0.8rem;
+}
+
+.user-name {
+  display: inline-block;
+  color: #808080;
+}
+
+.review-date {
+  color: #c1bbbb;
 }
