@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Red+Rose:wght@300;400;700&display=swap');
 
+:root {
+  --grey-text: #808080;
+  --header-text: #382110;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -62,10 +67,7 @@ body {
 .star-container {
   height: 20px;
   margin-left: 10px;
-}
-
-.select-shelves-placeholder {
-  margin-top: 20px;
+  margin-top: -4px;
 }
 
 #summary {
@@ -131,9 +133,81 @@ body {
 
 .user-name {
   display: inline-block;
-  color: #808080;
+  color: var(--grey-text);
 }
 
 .review-date {
   color: #c1bbbb;
+}
+
+.filled-user-star {
+  fill: #fa604a;
+}
+.user-stars {
+  display: inline-block;
+  margin-bottom: -6px;
+}
+
+.user-star {
+  height: 16px;
+}
+
+#author,
+.review-info {
+  color: var(--grey-text);
+}
+
+#title,
+#series,
+.review-header {
+  color: var(--header-text);
+}
+
+.review-header {
+  margin-left: 2rem;
+}
+
+.body-shelves-container {
+  position: relative;
+  height: 2vh;
+  padding: 0.4vh;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  width: 10vw;
+  font-size: 1.8vh;
+  background-color: #dfdfdf;
+  margin-top: 2rem;
+}
+
+.shelve-list-container {
+  position: absolute;
+  left: -2px;
+  top: 3.4vh;
+  padding: 1.4vh 0 1.4vh 2.2vh;
+  background-color: rgb(233, 233, 233);
+  z-index: 0;
+  border-radius: 4px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  width: 9.4vw;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.select-shelves-placeholder {
+  margin-left: 10px;
+}
+
+.shelve-list-container > ul {
+  list-style: none;
+}
+
+.review-link-button {
+  margin-top: 2rem;
+  text-decoration: none;
+  color: black;
+  background-color: #dfdfdf;
+  padding: 0.4rem;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
 }

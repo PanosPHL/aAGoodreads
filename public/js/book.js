@@ -3,6 +3,7 @@ let sent = true;
 let bookData;
 let reviews;
 let bookshelves;
+let currentUserId;
 
 const cover = document.getElementById('cover');
 const title = document.getElementById('title');
@@ -13,6 +14,7 @@ const reviewContent = document.getElementById('review-list');
 const reviewCount = document.querySelector('.review-count');
 const avgRating = document.querySelector('.avg-rating');
 const manageShelves = document.querySelector('.select-shelves-placeholder');
+const reviewLink = document.querySelector('.review-link-button');
 
 async function getBook() {
   const res = await fetch(`/api/books/${id}`);
@@ -33,6 +35,11 @@ function getReviewRow(review, i) {
     rating,
     User: { firstName, lastName, id: userId },
   } = review;
+
+  if (currentUserId === userId) {
+    reviewLink.innerText = 'Edit Your Review';
+    reviewLink.href = `http://localhost:8080/reviews/edit/book/${id}`;
+  }
 
   const revContainer = document.createElement('div');
   revContainer.classList.add('review-row');
@@ -57,15 +64,15 @@ function getReviewRow(review, i) {
 
     let starStr = starNums
       .map((num) => {
-        return `<svg class='star' id='user-${userId}-star-view-${num}' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio>
+        return `<svg class='user-star' id='user-${userId}-star-view-${num}' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio>
         <path ${
-          num <= review.rating ? 'class="filled-star"' : ''
+          num <= review.rating ? 'class="filled-user-star"' : ''
         } id='user-${userId}-star-path-${num}' d="M54,5 86,105 1,43H107L22,105" fill="#808080"/>
         </svg>`;
       })
       .join('');
 
-    userRatingStr += starStr;
+    userRatingStr += `<div class='user-stars'>${starStr}</div>`;
   }
 
   const reviewDate = document.createElement('span');
@@ -114,13 +121,14 @@ async function getReviews() {
   const res = await fetch(`/api/books/${id}/reviews`);
   const data = await res.json();
   reviews = data.reviews;
+  currentUserId = data.userId;
 }
 
 function populateReviewContent() {
   reviews.forEach((review, i) => getReviewRow(review, i));
 
   let { average, numRatings } = getAvgRating(reviews);
-  avgRating.innerHTML = average;
+  avgRating.innerHTML = average.toFixed(1);
 
   let reviewStr = '';
   if (!numRatings) {
@@ -132,7 +140,7 @@ function populateReviewContent() {
   }
 
   if (reviews.length === 1) {
-    reviewStr += '- 1 review';
+    reviewStr += ' - 1 review';
   } else if (!reviews.length) {
     reviewStr = 'This book currently has no reviews';
   } else {
@@ -175,7 +183,7 @@ function getAvgRating(reviews) {
     let avgRating =
       ratings.reduce((accum, val) => (accum += val)) / ratings.length;
     return {
-      average: Number(avgRating.toFixed(1)),
+      average: avgRating,
       numRatings: ratings.length,
     };
   } else {
@@ -228,6 +236,11 @@ document.addEventListener('DOMContentLoaded', async (event) => {
   populateBookContent();
   populateReviewContent();
   populateShelves();
+
+  if (!reviewLink.innerText) {
+    reviewLink.innerText = 'Add a Review';
+    reviewLink.href = `http://localhost:8080/reviews/add/book/${id}`;
+  }
 
   manageShelves.addEventListener('click', async ({ target }) => {
     if (

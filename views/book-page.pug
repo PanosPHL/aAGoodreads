@@ -11,21 +11,23 @@ block content
 			.info-and-cover-container
 				.cover-and-shelf-container
 					img#cover
-					div(class='select-shelves-placeholder') <span class='bookshelves-text'>Manage Bookshelves</span>
-						span(class='shelf-arrow-placeholder') ▾
-					form
-						.shelve-list-container.hidden
-							ul.shelves__dropdown--default-checks
-								li.currently-reading
-									label(for='currently-reading') Currently Reading
-									input(type='radio' id='currently-reading' name='defaultShelf')
-								li.read
-									label(for='read') Read
-									input(type='radio' id='read' name='defaultShelf')
-								li.want-to-read
-									label(for='want-to-read') Want to Read
-									input(type='radio' id='want-to-read' name='defaultShelf')
-							ul.shelves__dropdown--created-shelves
+					div.body-shelves-container
+						span(class='select-shelves-placeholder') <span class='bookshelves-text'>Manage Bookshelves</span>
+							span(class='shelf-arrow-placeholder') ▾
+						form
+							.shelve-list-container.hidden
+								ul.shelves__dropdown--default-checks
+									li.currently-reading
+										label(for='currently-reading') Currently Reading
+										input(type='radio' id='currently-reading' name='defaultShelf')
+									li.read
+										label(for='read') Read
+										input(type='radio' id='read' name='defaultShelf')
+									li.want-to-read
+										label(for='want-to-read') Want to Read
+										input(type='radio' id='want-to-read' name='defaultShelf')
+								ul.shelves__dropdown--created-shelves
+					a(href="" class="review-link-button")
 				.book-content-container
 					.review-and-info-container
 						.info-container
@@ -53,7 +55,7 @@ block content
 								span.review-count
 					#summary
 			.review-container
-				h3 Reviews
+				h3.review-header Reviews
 				hr
 				a(href="")
 				#review-list
