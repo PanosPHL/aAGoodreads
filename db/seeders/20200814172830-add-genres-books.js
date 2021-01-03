@@ -14,10 +14,15 @@ module.exports = {
       { bookId: 6, genreId: 2 },
       { bookId: 7, genreId: 1 },
       { bookId: 7, genreId: 2 },
+      { bookId: 8, genreId: 4 },
+      { bookId: 9, genreId: 5 },
+      { bookId: 10, genreId: 5 },
+      { bookId: 11, genreId: 6 },
+      { bookId: 12, genreId: 7 },
     ]);
   },
 
   down: async (queryInterface, Sequelize) => {
     return queryInterface.bulkDelete('BookGenres', null, {});
-  }
+  },
 };

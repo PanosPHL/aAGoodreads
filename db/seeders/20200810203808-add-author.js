@@ -13,6 +13,26 @@ module.exports = {
           lastName: 'Davis',
           biography: 'Great trumpet player',
         },
+        {
+          firstName: 'Daniel',
+          lastName: 'Kahneman',
+          biography: 'Writer and author',
+        },
+        {
+          firstName: 'Bruce',
+          lastName: 'Lee',
+          biography: 'Martial artist',
+        },
+        {
+          firstName: 'Sun',
+          lastName: 'Tsu',
+          biography: 'Author',
+        },
+        {
+          firstName: 'Aravind',
+          lastName: 'Adiga',
+          biography: 'Author',
+        },
       ],
       { fields: ['firstName', 'lastName', 'biography'] }
     );

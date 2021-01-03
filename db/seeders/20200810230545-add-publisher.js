@@ -5,6 +5,10 @@ module.exports = {
     return queryInterface.bulkInsert('Publishers', [
       { name: 'Scholastic' },
       { name: 'Simon & Schuster' },
+      { name: 'Farrar, Straus and Giroux' },
+      { name: 'Black Belt Communications' },
+      { name: 'iUniverse' },
+      { name: 'Free Press' },
     ]);
   },
 

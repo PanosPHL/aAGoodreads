@@ -82,6 +82,42 @@ module.exports = {
         publishingDate: new Date('September 15 1990'),
         publisherId: 2,
       },
+      {
+        title: 'Thinking, Fast And Slow',
+        summary: `In the highly anticipated Thinking, Fast and Slow, Kahneman takes us on a groundbreaking tour of the mind and explains the two systems that drive the way we think. System 1 is fast, intuitive, and emotional; System 2 is slower, more deliberative, and more logical. Kahneman exposes the extraordinary capabilities—and also the faults and biases—of fast thinking, and reveals the pervasive influence of intuitive impressions on our thoughts and behavior. The impact of loss aversion and overconfidence on corporate strategies, the difficulties of predicting what will make us happy in the future, the challenges of properly framing risks at work and at home, the profound effect of cognitive biases on everything from playing the stock market to planning the next vacation—each of these can be understood only by knowing how the two systems work together to shape our judgments and decisions.`,
+        cover:
+          'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1317793965l/11468377.jpg',
+        publishingDate: new Date('October 25 2011'),
+        ISBN: '0374275637',
+        publisherId: 3,
+      },
+      {
+        title: 'Tao of Jeet Kune Do',
+        summary: `From the Introduction: "In 1970, Bruce sustained a rather sever injury to his back. His doctors ordered him to discontinue the practice of martial arts and to remain in bed to allow his back heal. This was probably the most trying and dispiriting time in Bruce's life. He stayed in bed, virtually flat on his back for six months, but he couldn't keep his mind from working - the result of which is this book." Linda Lee "Jeet Kune Do, you see, has no definite lines or boundaries - only those you make yourself." Gilbert L Johnson`,
+        cover:
+          'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1386920607l/57858.jpg',
+        publishingDate: new Date('October 1 1975'),
+        ISBN: '0897500482',
+        publisherId: 4,
+      },
+      {
+        title: 'The Art of War/The Art of Warfare',
+        summary: `Sun Tzu and Sun Pin's timeless strategic masterpieces are constantly analyzed and interpreted by leaders worldwide. For the first time ever, author D.E. Tarver explains the classic texts, The Art of War by Sun Tzu and The Art of Warfare by Sun Pin, in plain English.`,
+        cover:
+          'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1387677448l/19605970.jpg',
+        publishingDate: new Date('April 19 2002'),
+        ISBN: 'B005GEFCMQ',
+        publisherId: 5,
+      },
+      {
+        title: 'The White Tiger',
+        summary: `Introducing a major literary talent, The White Tiger offers a story of coruscating wit, blistering suspense, and questionable morality, told by the most volatile, captivating, and utterly inimitable narrator that this millennium has yet seen.`,
+        cover:
+          'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1347754998l/1768603.jpg',
+        publishingDate: new Date('January 18 2008'),
+        ISBN: '1416562591',
+        publisherId: 6,
+      },
     ]);
   },
 

@@ -13,6 +13,10 @@ module.exports = {
         { bookId: 6, authorId: 1 },
         { bookId: 7, authorId: 1 },
         { bookId: 8, authorId: 2 },
+        { bookId: 9, authorId: 3 },
+        { bookId: 10, authorId: 4 },
+        { bookId: 11, authorId: 5 },
+        { bookId: 12, authorId: 6 },
       ],
       { fields: ['bookId', 'authorId'] }
     );
