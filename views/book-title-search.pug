@@ -1,0 +1,14 @@
+extends layout.pug
+
+append head
+    script(src='/public/js/search.js' type='module' defer)
+    link(rel='stylesheet' type='text/css' href='/public/css/books-browse.css')
+    link(rel='stylesheet' type='text/css' href='/public/css/header.css')
+    link(rel='stylesheet' type='text/css' href='/public/css/footer.css')
+
+block content
+    div.content-container
+        .content-container__header-container
+            h2.browse-header
+        p.showing
+        div.book-list

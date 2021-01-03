@@ -1,145 +1,149 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500&display=swap');
 
 header {
-    position: sticky;
-    top: 0;
-    background-color: white;
-    z-index: 1;
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 1;
 }
 
 .header-container {
-    display: flex;
-    height: 71px;
-    border-bottom: 2px solid #A0A0A0;
+  display: flex;
+  height: 71px;
+  border-bottom: 2px solid #a0a0a0;
 }
 
 .header__left {
-    font-family: 'Manrope', sans-serif;
-    font-size: 28px;
+  font-family: 'Manrope', sans-serif;
+  font-size: 28px;
 }
 
 .goodreads-header {
-    margin: -14px 0 auto 136px;
-    font-family: 'Manrope', sans-serif;
-    font-size: 58px;
-    color: #4C2F1C;
+  margin: -14px 0 auto 136px;
+  font-family: 'Manrope', sans-serif;
+  font-size: 58px;
+  color: #4c2f1c;
 }
 
 .header__left--good {
-    font-weight: 200;
-    font-family: 'Manrope';
+  font-weight: 200;
+  font-family: 'Manrope';
 }
 
 .header__left--reads {
-    font-family: 'Manrope';
-    font-weight: 400;
+  font-family: 'Manrope';
+  font-weight: 400;
 }
 
 .header__right {
-    display: flex;
-    margin-left: 28%;
+  display: flex;
+  margin-left: 28%;
 }
 
 .header__right-item:not(.header__right-item--profile) {
-    display: block;
-    width: 9vw;
-    color: grey;
-    padding-top: 2vh;
-    font-size: 2.5vh;
-    text-align: center;
+  display: block;
+  width: 9vw;
+  color: grey;
+  padding-top: 2vh;
+  font-size: 2.5vh;
+  text-align: center;
 }
 
 .header__right-item {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .header__right-item:not(.header__right-item--profile):hover {
-    background-color: rgb(204, 204, 204);
+  background-color: rgb(204, 204, 204);
 }
 
 .header__right-item--profile {
-    display: block;
-    margin-left: 2vw;
+  display: block;
+  margin-left: 2vw;
 }
 
 .header__right-item--profile-pic {
-    border-radius: 50%;
-    margin-top: 0.6vh;
+  border-radius: 50%;
+  margin-top: 0.6vh;
 }
 
 .header__right-item--browse {
-    height: 5.6vh;
+  height: 5.6vh;
+}
+
+.search-form {
+  margin: auto 0;
 }
 
 #myInput {
-    height: 3vh;
-    width: 8vw;
-    margin: auto 1vw auto 0;
+  height: 3vh;
+  width: 8vw;
+  margin: auto 1vw auto 0;
 }
 
 .drop-list {
-    list-style: none;
-    border: 1px solid rgb(221, 221, 221);
-    border-radius: 4px;
+  list-style: none;
+  border: 1px solid rgb(221, 221, 221);
+  border-radius: 4px;
 }
 
 .drop-list a {
-    text-decoration: none;
-    color: rgb(110, 110, 110);
+  text-decoration: none;
+  color: rgb(110, 110, 110);
 }
 
 .dropContainer {
-    position: relative;
+  position: relative;
 }
 
 .dropContent {
-    position: absolute;
-    background-color: white;
-    top: 6.6vh;
-    left: 0.7vw;
-    border-radius: 4px;
+  position: absolute;
+  background-color: white;
+  top: 6.6vh;
+  left: 0.7vw;
+  border-radius: 4px;
 }
 
 .dropContent li {
-    padding-left: 0.4vw;
-    padding-right: 1vw;
-    padding-bottom: 0.6vh;
-    padding-top: 0.8vh;
-    font-size: 1.6vh;
-    height: 2.4vh;
+  padding-left: 0.4vw;
+  padding-right: 1vw;
+  padding-bottom: 0.6vh;
+  padding-top: 0.8vh;
+  font-size: 1.6vh;
+  height: 2.4vh;
 }
 
 .dropContent li:hover {
-    background-color: rgb(204, 204, 204);
+  background-color: rgb(204, 204, 204);
 }
 
 .dropProfileContent {
-    position: absolute;
-    background-color: white;
-    top: 6.6vh;
-    left: 1.7vw;
-    border-radius: 4px;
-    margin-top: 13px;
+  position: absolute;
+  background-color: white;
+  top: 6.6vh;
+  left: 1.7vw;
+  border-radius: 4px;
+  margin-top: 13px;
 }
 
 .dropProfileContent li {
-    padding-left: 0.4vw;
-    padding-right: 1vw;
-    padding-bottom: 0.6vh;
-    padding-top: 0.8vh;
-    font-size: 1.6vh;
-    height: 2.4vh;
+  padding-left: 0.4vw;
+  padding-right: 1vw;
+  padding-bottom: 0.6vh;
+  padding-top: 0.8vh;
+  font-size: 1.6vh;
+  height: 2.4vh;
 }
 
 .dropProfileContent li:hover {
-    background-color: rgb(204, 204, 204);
+  background-color: rgb(204, 204, 204);
 }
 
 .hidden {
-    display: none;
+  display: none;
 }
 
 .selected {
-    text-decoration: underline;
-    background-color: rgb(204, 204, 204);
+  text-decoration: underline;
+  background-color: rgb(204, 204, 204);
 }

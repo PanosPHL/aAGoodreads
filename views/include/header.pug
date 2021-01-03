@@ -4,7 +4,8 @@ header.header
             h1.header__left--good.goodreads-header good
                 span.header__left--reads reads
         nav.header__right
-            input(id="myInput" placeholder="Search...")
+            form.search-form
+                input(id="myInput" placeholder="Search by Title" name="title")
             a(class='header__right-item header__right-item--home' href='/') Home
             a(class='header__right-item header__right-item--my-books' href='/my-books') My Books
             .dropContainer
