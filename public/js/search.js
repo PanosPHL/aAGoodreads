@@ -154,13 +154,11 @@ function genCreatedShelves(book, bookshelves) {
 }
 
 const editOrWriteReview = (book, userId) => {
-  console.log(userId);
   if (!book.Reviews.length) {
     return `<a class='review-link' href='/reviews/add/book/${book.id}'>Add a Review</a>`;
   }
 
   for (const review of book.Reviews) {
-    console.log(review);
     if (review.userId === userId) {
       return `<a class='review-link' href='/reviews/edit/book/${book.id}'>Edit Your Review</a>`;
     }
@@ -231,10 +229,6 @@ document.addEventListener('DOMContentLoaded', async (event) => {
           defaultShelf: formData.getAll('defaultShelf'),
           createdShelf: formData.getAll('createdShelf'),
         };
-        console.log(
-          compareState(prevState['defaultShelf'], body['defaultShelf']),
-          compareState(prevState['createdShelf'], body['createdShelf'])
-        );
         if (
           compareState(prevState['defaultShelf'], body['defaultShelf']) ||
           compareState(prevState['createdShelf'], body['createdShelf'])

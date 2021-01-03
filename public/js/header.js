@@ -17,7 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   const dropContainers = document.getElementsByClassName('dropContainer');
-  console.log(dropContainers);
 
   dropContainers[0].addEventListener('click', (event) => {
     document.querySelector('.dropContent').classList.toggle('hidden');
