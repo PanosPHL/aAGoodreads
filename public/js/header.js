@@ -16,25 +16,20 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  const dropContainers = document.getElementsByClassName('dropContainer');
+  const dropContainer = document.querySelector('.dropContainer');
 
-  dropContainers[0].addEventListener('click', (event) => {
+  dropContainer.addEventListener('click', (event) => {
     document.querySelector('.dropContent').classList.toggle('hidden');
     dropContainer.classList.toggle('selected');
   });
 
-  dropContainers[1].addEventListener('click', (event) => {
-    document.querySelector('.dropProfileContent').classList.toggle('hidden');
-    dropContainer.classList.toggle('selected');
-  });
-});
+  logout.addEventListener('click', async (e) => {
+    const res = await fetch('/api/users/logout', {
+      method: 'DELETE',
+    });
 
-logout.addEventListener('click', async (e) => {
-  const res = await fetch('/api/users/logout', {
-    method: 'DELETE',
+    if (res.ok) {
+      window.location.href = '/';
+    }
   });
-
-  if (res.ok) {
-    window.location.href = '/';
-  }
 });
