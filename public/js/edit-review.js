@@ -198,8 +198,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
       }
     }
 
-    debugger;
-
     const res2 = await fetch(`/api/books/${bookId}`, {
       method: 'POST',
       body: JSON.stringify(body2),
