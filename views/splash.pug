@@ -15,14 +15,16 @@ html(lang="en")
                     span.title__text--reads reads
             div(class='header__item header__item--log-in')
                 form#login
-                    .log-in__inputs-container
-                        input(class='log-in__inputs log-in__inputs--email' type='email' name='email' id='login-email' placeholder='Email Address')
-                        input(class='log-in__inputs log-in__inputs--password' type='password' name='password' id='login-password' placeholder='Password')
-                    .log-in__bottom-container
-                        input(class='log-in__bottom log-in__bottom--remember-me' type="checkbox" name="remember-me" id='remember-me')
-                        label(for='remember-me' class='log-in__bottom log-in__bottom--remember-me-text') Remember Me
-                        a(class='log-in__bottom log-in__bottom--forgot' href='/forgot') Forgot it?
-                    button(class='log-in__inputs log-in__inputs--submit' type="submit") Sign In
+                    .login__content-container
+                        .log-in__inputs-container
+                            input(class='log-in__inputs log-in__inputs--email' type='email' name='email' id='login-email' placeholder='Email Address')
+                            input(class='log-in__inputs log-in__inputs--password' type='password' name='password' id='login-password' placeholder='Password')
+                            button(class='log-in__inputs log-in__inputs--submit' type="submit") Sign In
+                            button(class='log-in__inputs log-in__inputs--demo-user' type="button") Demo User
+                        .log-in__bottom-container
+                            input(class='log-in__bottom log-in__bottom--remember-me' type="checkbox" name="remember-me" id='remember-me')
+                            label(for='remember-me' class='log-in__bottom log-in__bottom--remember-me-text') Remember Me
+                            a(class='log-in__bottom log-in__bottom--forgot' href='/forgot') Forgot it?
         .sign-up-container
             .sign-up__form-container
                 h3.sign-up__form-title New here? Create a free account!
