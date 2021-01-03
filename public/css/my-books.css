@@ -1,176 +1,194 @@
 * {
-    padding: 0;
-    margin: 0;
-    font-family: Helvetica;
+  padding: 0;
+  margin: 0;
+  font-family: Helvetica;
 }
 
 footer.footer {
-    margin: 0;
+  margin: 0;
 }
 
 body {
-    font-family: Helvetica;
+  font-family: Helvetica;
 }
 
 .content-container {
-    min-height: 750px;
-    display: flex;
+  min-height: 750px;
+  display: flex;
+  padding: 0px 1vw 0px 7.5vw;
 }
 
 .content__left-bar {
-    min-height: 750px;
-    width: 210px;
-    margin-left: 144px;
-    background-color: #789DC4;
-    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+  min-height: 750px;
+  width: 210px;
+  background-color: #789dc4;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
 }
 
 .content__book-table {
-    margin-top: 1.6vh;
+  margin-top: 1.6vh;
 }
 
 .book-table__item--header {
-    margin-left: 20px;
+  margin-left: 20px;
 }
 
 table {
-    margin-top: -20px;
+  margin-top: -20px;
 }
 
 .default__item--list {
-    list-style: none;
+  list-style: none;
 }
 
 .content__added-bookshelves {
-    margin-top: 16px;
+  margin-top: 16px;
 }
 
 .content__added-bookshelves--list {
-    list-style: none;
+  list-style: none;
 }
 
 .cover {
-    height: 120px;
-    width: 80px;
+  height: 120px;
+  width: 80px;
 }
 
 .title-cell {
-    width: 140px;
+  width: 140px;
 }
 
 table li {
-    list-style: none;
+  list-style: none;
 }
 
 .content__left-bar--bookshelves {
-    margin-left: 1.4vw;
-    margin-top: 7vh;
+  margin-left: 1.4vw;
+  margin-top: 7vh;
 }
 
 .default__item--header {
-    color: white;
+  color: white;
 }
 
 .content__left-bar--bookshelves a {
-    color: white;
-    text-decoration: none;
+  color: white;
+  text-decoration: none;
 }
 
 .content__left-bar--bookshelves li {
-    margin-top: 1vh;
+  margin-top: 1vh;
 }
 
 .content__left-bar button {
-    background-color: #787878;
-    border: none;
-    height: 3vh;
-    width: 3.8vw;
-    border-radius: 4px;
-    font-size: 1.2vh;
-    font-weight: bold;
-    color: white;
-    font-family: Helvetica;
+  background-color: #787878;
+  border: none;
+  height: 3vh;
+  width: 3.8vw;
+  border-radius: 4px;
+  font-size: 1.2vh;
+  font-weight: bold;
+  color: white;
+  font-family: Helvetica;
 }
 
 .content__left-bar input {
-    border-radius: 4px;
-    border: 1px gray solid;
-    height: 2.5vh;
+  border-radius: 4px;
+  border: 1px gray solid;
+  height: 2.5vh;
 }
 
 .delete-shelf {
-    margin-left: 0.3vw;
+  margin-left: 0.3vw;
 }
 
 .add-bookshelf-form {
-    margin-top: 2vh;
+  margin-top: 2vh;
 }
 
 .add-shelf {
-    margin-top: 1vh;
+  margin-top: 1vh;
 }
 
 .book-table__header-container {
-    display: flex;
+  display: flex;
 }
 
 .book-table__item--header {
-    color: grey;
-    font-size: 3vh;
-    margin-left: 3vw;
+  color: grey;
+  font-size: 3vh;
+  margin-left: 3vw;
 }
 
 .book-table__shelf-name {
-    font-size: 2.6vh;
-    margin: auto 0 auto 0.6vw;
-    color: #787878;
-    margin-top: 0.3vh;
+  font-size: 2.6vh;
+  margin: auto 0 auto 0.6vw;
+  color: #787878;
+  margin-top: 0.3vh;
 }
 
 table {
-    margin-top: 0.6vh;
-    margin-left: 2vw;
-    border-collapse: collapse;
+  margin-top: 0.6vh;
+  margin-left: 2vw;
+  border-collapse: collapse;
 }
 
 .title-cell {
-    width: 8vw;
+  width: 8vw;
 }
 
-.title-cell > a, .shelve-cell a, .review-cell > a {
-    text-decoration: none;
-    color: #707070;
+.title-cell > a,
+.shelve-cell a,
+.review-cell > a {
+  text-decoration: none;
+  color: #707070;
 }
 
 tbody td:not(.title-cell):not(.shelve-cell) {
-    color: #707070;
-    text-align: center;
+  color: #707070;
+  text-align: center;
 }
 
 tbody td {
-    border-top: 1px solid black;
-    padding-left: 1vw;
-    padding-right: 1vw;
-    padding-top: 0.8vh;
-    padding-bottom: 0.8vh;
+  border-top: 1px solid black;
+  padding-left: 1vw;
+  padding-right: 1vw;
+  padding-top: 0.8vh;
+  padding-bottom: 0.8vh;
+}
+
+.shelve-cell {
+  text-align: center;
 }
 
 th {
-    padding-left: 1vw;
-    padding-right: 1vw;
-    padding-top: 0.8vh;
-    padding-bottom: 0.8vh;
-    color: #919191;
+  padding-left: 1vw;
+  padding-right: 1vw;
+  padding-top: 0.8vh;
+  padding-bottom: 0.8vh;
+  color: #919191;
 }
 
 .delete-from-my-books {
-    background-color: #787878;
-    border: none;
-    height: 3.8vh;
-    width: 4.8vw;
-    border-radius: 4px;
-    font-size: 1.4vh;
-    font-weight: bold;
-    color: white;
-    font-family: Helvetica;
+  background-color: #787878;
+  border: none;
+  height: 36px;
+  width: 92px;
+  border-radius: 4px;
+  font-size: 12px;
+  padding: 2px 4px;
+  font-weight: bold;
+  color: white;
+  font-family: Helvetica;
+}
+
+@media screen and (max-width: 1440px) {
+  tbody td {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .content-container {
+    padding-left: 4vw;
+  }
 }
