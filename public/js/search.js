@@ -1,4 +1,5 @@
-const [, , browseType] = window.location.pathname.toString().split('/');
+let [, searchTitle] = window.location.toString().split('title=');
+searchTitle = decodeURIComponent(searchTitle.slice(0, searchTitle.length - 1));
 
 const shelveText = document.getElementsByClassName('body-shelves-container');
 
@@ -179,7 +180,7 @@ function compareState(state1, state2) {
 }
 
 document.addEventListener('DOMContentLoaded', async (event) => {
-  const bookRes = await fetch('/api/books/');
+  const bookRes = await fetch(`/api/search/title/${searchTitle}`);
   let { books, userId } = await bookRes.json();
 
   const shelfRes = await fetch('/api/bookshelves/');
@@ -189,15 +190,15 @@ document.addEventListener('DOMContentLoaded', async (event) => {
 
   document.querySelector(
     '.browse-header'
-  ).innerHTML = `Browse &gt; By ${browseType.slice(0, browseType.length - 1)}`;
+  ).innerHTML = `Search > '${searchTitle}'`;
   document.querySelector('.book-list').innerHTML = genList(
     books,
     bookshelves,
     userId
   );
-  document.querySelector(
-    '.showing'
-  ).innerHTML = `Showing 1-${books.length} of ${books.length}`;
+  document.querySelector('.showing').innerHTML = `Showing ${
+    books.length ? '1' : '0'
+  }-${books.length} of ${books.length}`;
 
   for (const shelf of shelveText) {
     shelf.addEventListener('click', async (event) => {
