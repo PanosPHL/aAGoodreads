@@ -10,6 +10,8 @@ header {
 .header-container {
   display: flex;
   height: 71px;
+  padding: 0 1vw 0 7.5vw;
+  justify-content: space-between;
   border-bottom: 2px solid #a0a0a0;
 }
 
@@ -19,7 +21,7 @@ header {
 }
 
 .goodreads-header {
-  margin: -14px 0 auto 136px;
+  margin-top: -0.6rem;
   font-family: 'Manrope', sans-serif;
   font-size: 58px;
   color: #4c2f1c;
@@ -37,15 +39,16 @@ header {
 
 .header__right {
   display: flex;
-  margin-left: 28%;
+  align-items: center;
 }
 
 .header__right-item:not(.header__right-item--profile) {
   display: block;
   width: 9vw;
+  height: inherit;
+  padding: calc((71px - 26px) / 2) 0px;
   color: grey;
-  padding-top: 2vh;
-  font-size: 2.5vh;
+  font-size: 1.4rem;
   text-align: center;
 }
 
@@ -94,6 +97,7 @@ header {
 
 .dropContainer {
   position: relative;
+  vertical-align: middle;
 }
 
 .dropContent {
@@ -146,4 +150,27 @@ header {
 .selected {
   text-decoration: underline;
   background-color: rgb(204, 204, 204);
+}
+
+.logout-button-image {
+  height: 24px;
+}
+
+.logout-button {
+  width: 8%;
+  background: #ffffff;
+  border: none;
+  padding: 6px 0px 6px 2px;
+  border-radius: 4px;
+  margin-left: 24px;
+}
+
+.logout-button:hover {
+  filter: brightness(90%);
+}
+
+@media screen and (max-width: 1440px) {
+  .header-container {
+    padding-left: 4%;
+  }
 }
