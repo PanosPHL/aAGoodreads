@@ -67,11 +67,7 @@ header {
 
 .header__right-item--profile-pic {
   border-radius: 50%;
-  margin-top: 0.6vh;
-}
-
-.header__right-item--browse {
-  height: 5.6vh;
+  margin-left: 20px;
 }
 
 .search-form {
@@ -80,8 +76,7 @@ header {
 
 #myInput {
   height: 3vh;
-  width: 8vw;
-  margin: auto 1vw auto 0;
+  margin-right: 20px;
 }
 
 .drop-list {

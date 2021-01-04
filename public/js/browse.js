@@ -181,15 +181,16 @@ function compareState(state1, state2) {
 document.addEventListener('DOMContentLoaded', async (event) => {
   const bookRes = await fetch('/api/books/');
   let { books, userId } = await bookRes.json();
+  console.log(books);
 
   const shelfRes = await fetch('/api/bookshelves/');
   let { bookshelves } = await shelfRes.json();
 
   let prevState;
 
-  document.querySelector(
-    '.browse-header'
-  ).innerHTML = `Browse &gt; By ${browseType.slice(0, browseType.length - 1)}`;
+  document.querySelector('.browse-header').innerHTML = `Browse &gt; By ${
+    browseType[0].toUpperCase() + browseType.slice(1)
+  }`;
   document.querySelector('.book-list').innerHTML = genList(
     books,
     bookshelves,

@@ -26,6 +26,7 @@ body {
   display: flex;
   flex-direction: column;
   padding-right: 8vw;
+  min-height: 652px;
 }
 
 .info-and-cover-container {
@@ -218,4 +219,10 @@ body {
 
 .saving {
   margin-left: 60px;
+}
+
+@media screen and (max-width: 1440px) {
+  .page-container {
+    padding: 4vh 0;
+  }
 }

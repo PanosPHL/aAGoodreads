@@ -6,10 +6,14 @@ module.exports = {
       { name: 'Wizards' },
       { name: 'Sci-fi' },
       { name: 'Muggles' },
+      { name: 'Biographical' },
+      { name: 'Self-Help' },
+      { name: 'Philosophy' },
+      { name: 'Fiction' },
     ]);
   },
 
   down: async (queryInterface, Sequelize) => {
     return queryInterface.bulkDelete('Genres', null, {});
-  }
+  },
 };
