@@ -181,7 +181,6 @@ function compareState(state1, state2) {
 document.addEventListener('DOMContentLoaded', async (event) => {
   const bookRes = await fetch('/api/books/');
   let { books, userId } = await bookRes.json();
-  console.log(books);
 
   const shelfRes = await fetch('/api/bookshelves/');
   let { bookshelves } = await shelfRes.json();

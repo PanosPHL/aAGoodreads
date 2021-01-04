@@ -262,7 +262,6 @@ document.addEventListener('DOMContentLoaded', async (event) => {
   }
 
   manageShelves.addEventListener('click', async ({ target }) => {
-    console.log(target);
     if (
       !target.classList.contains('select-shelves-placeholder') &&
       !target.classList.contains('bookshelves-text') &&
@@ -287,8 +286,6 @@ document.addEventListener('DOMContentLoaded', async (event) => {
         defaultShelf: formData.getAll('defaultShelf'),
         createdShelf: formData.getAll('createdShelf'),
       };
-
-      console.log(body, prevState);
 
       if (
         compareState(prevState['defaultShelf'], body['defaultShelf']) ||
