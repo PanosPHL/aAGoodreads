@@ -118,6 +118,25 @@ module.exports = {
         ISBN: '1416562591',
         publisherId: 6,
       },
+      {
+        title:
+          'The One Thing: The Surprisingly Simple Truth Behind Extraordinary Results',
+        summary: `The One Thing explains the success habit to overcome the six lies that block our success, beat the seven thieves that steal time, and leverage the laws of purpose, priority, and productivity.`,
+        cover:
+          'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1559563270l/16256798._SX318_.jpg',
+        publishingDate: new Date('April 1 2013'),
+        ISBN: '1885167776',
+        publisherId: 7,
+      },
+      {
+        title: "Pandolfini's Ultimate Guide to Chess",
+        summary: `From America’s foremost chess coach and game strategist for Netflix’s The Queen’s Gambit comes a comprehensive guide covering all aspects of the game, to improve your technique whether you are a newcomer or a longtime fan.`,
+        cover:
+          'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1388623005l/360163.jpg',
+        publishingDate: new Date('September 9 2003'),
+        ISBN: '0743226178',
+        publisherId: 8,
+      },
     ]);
   },
 

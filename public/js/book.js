@@ -128,7 +128,7 @@ function populateBookContent() {
   title.innerHTML = book.title;
   summary.innerHTML = newlinePs(book.summary);
   authors.innerHTML = `By ${author.firstName} ${author.lastName}`;
-  series.innerHTML = `${seriesData.name} Series`;
+  series.innerHTML = seriesData ? `${seriesData.name} Series` : '';
 }
 
 async function getReviews() {
@@ -142,7 +142,7 @@ function populateReviewContent() {
   reviews.forEach((review, i) => getReviewRow(review, i));
 
   let { average, numRatings } = getAvgRating(reviews);
-  avgRating.innerHTML = average.toFixed(1);
+  avgRating.innerHTML = average ? average.toFixed(1) : 0;
 
   let reviewStr = '';
   if (!numRatings) {

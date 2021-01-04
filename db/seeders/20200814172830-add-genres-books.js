@@ -19,6 +19,8 @@ module.exports = {
       { bookId: 10, genreId: 5 },
       { bookId: 11, genreId: 6 },
       { bookId: 12, genreId: 7 },
+      { bookId: 13, genreId: 5 },
+      { bookId: 14, genreId: 5 },
     ]);
   },
 

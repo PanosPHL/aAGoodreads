@@ -9,6 +9,8 @@ module.exports = {
       { name: 'Black Belt Communications' },
       { name: 'iUniverse' },
       { name: 'Free Press' },
+      { name: 'Bard Press' },
+      { name: 'Touchstone' },
     ]);
   },
 
