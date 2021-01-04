@@ -139,7 +139,13 @@ async function getReviews() {
 }
 
 function populateReviewContent() {
-  reviews.forEach((review, i) => getReviewRow(review, i));
+  if (reviews.length) {
+    reviews.forEach((review, i) => getReviewRow(review, i));
+  } else {
+    reviewContent.setAttribute('id', 'no-reviews');
+    reviewContent.innerHTML =
+      '<h2 class="no-review-header" style="text-align: center;">This book does not currently have any reviews</h2>';
+  }
 
   let { average, numRatings } = getAvgRating(reviews);
   avgRating.innerHTML = average ? average.toFixed(1) : 0;
@@ -156,7 +162,7 @@ function populateReviewContent() {
   if (reviews.length === 1) {
     reviewStr += ' - 1 review';
   } else if (!reviews.length) {
-    reviewStr = 'This book currently has no reviews';
+    reviewStr = 'No reviews';
   } else {
     reviewStr += `- ${reviews.length} reviews`;
   }
@@ -268,7 +274,7 @@ document.addEventListener('DOMContentLoaded', async (event) => {
       'Manage Booshelves <span class="shelf-arrow-placeholder">▾</span>';
 
     document.querySelector('.shelve-list-container').classList.toggle('hidden');
-    const formData = new FormData(document.querySelector('form'));
+    const formData = new FormData(document.querySelector('.shelf-form'));
 
     if (!shelveListContainer.classList.contains('hidden')) {
       prevState = {
