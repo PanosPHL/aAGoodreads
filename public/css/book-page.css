@@ -221,8 +221,16 @@ body {
   margin-left: 60px;
 }
 
+#no-reviews {
+  padding-top: 2vh;
+}
+
+.no-review-header {
+  color: var(--grey-text);
+}
+
 @media screen and (max-width: 1440px) {
   .page-container {
-    padding: 4vh 0;
+    padding: 4vh 16vw;
   }
 }
