@@ -27,6 +27,7 @@ body {
 
 .content__book-table {
   margin-top: 1.6vh;
+  min-width: 1095px;
 }
 
 .book-table__item--header {
