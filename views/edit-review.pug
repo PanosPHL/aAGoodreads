@@ -7,53 +7,52 @@ append head
     script(src='/public/js/edit-review.js' type='module' defer)
 
 block content
-    .body-content-grid
-        .body-content-container
-            .body-header-container
-                h3(class='body-header-container__item body-header-container__item--text')
-            .body-book-container
-                img(class='book-container__item book-container__item--cover')
-                .book-container__text-container
-                    h4(class='book-container__text-item book-container__text-item--title'): a(class='book-title__link')
-                    h5(class='book-container__text-item book-container__text-item--authors')
-            form
-                .body-rating-shelf-container
-                    .body-rating-container
-                        span(class='rating-container__text rating-container__text--my-rating') My rating:
-                        .stars#star-container
-                            <svg id='star-view-1' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio>
-                            <path id='star-path-1' d="M54,5 86,105 1,43H107L22,105" fill="#808080"/>
-                            </svg>
-                            <svg id='star-view-2' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio>
-                            <path id='star-path-2' d="M54,5 86,105 1,43H107L22,105" fill="#808080"/>
-                            </svg>
-                            <svg id='star-view-3' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio>
-                            <path id='star-path-3' d="M54,5 86,105 1,43H107L22,105" fill="#808080"/>
-                            </svg>
-                            <svg id='star-view-4' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio>
-                            <path id='star-path-4' d="M54,5 86,105 1,43H107L22,105" fill="#808080"/>
-                            </svg>
-                            <svg id='star-view-5' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio>
-                            <path id='star-path-5' d="M54,5 86,105 1,43H107L22,105" fill="#808080"/>
-                            </svg>
-                            span(class='clear-rating') Clear
-                    .body-shelves-container
-                        div(class='select-shelves-placeholder') <span class='bookshelves-text'>Manage Bookshelves</span>
-                                span(class='shelf-arrow-placeholder') ▾
-                        .shelve-list-container.hidden
-                                ul.shelves__dropdown--default-checks
-                                    li.currently-reading
-                                        label(for='currently-reading') Currently Reading
-                                        input(type='radio' id='currently-reading' name='defaultShelf')
-                                    li.read
-                                        label(for='read') Read
-                                        input(type='radio' id='read' name='defaultShelf')
-                                    li.want-to-read
-                                        label(for='want-to-read') Want to Read
-                                        input(type='radio' id='want-to-read' name='defaultShelf')
-                                ul.shelves__dropdown--created-shelves
-                    .review-content-container
-                        p(class='what-did-you-think') What did you think?
-                        textarea(class='review-container__item review-container__item--content' name='content' id='content' placeholder='Enter your review')
-                    .submit-container
-                        button.submit-button(type="submit") Post
+    .body-content-container
+        .body-header-container
+            h3(class='body-header-container__item body-header-container__item--text')
+        .body-book-container
+            img(class='book-container__item book-container__item--cover')
+            .book-container__text-container
+                h4(class='book-container__text-item book-container__text-item--title'): a(class='book-title__link')
+                h5(class='book-container__text-item book-container__text-item--authors')
+        form
+            .body-rating-shelf-container
+                .body-rating-container
+                    span(class='rating-container__text rating-container__text--my-rating') My rating:
+                    .stars#star-container
+                        <svg id='star-view-1' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio>
+                        <path id='star-path-1' d="M54,5 86,105 1,43H107L22,105" fill="#808080"/>
+                        </svg>
+                        <svg id='star-view-2' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio>
+                        <path id='star-path-2' d="M54,5 86,105 1,43H107L22,105" fill="#808080"/>
+                        </svg>
+                        <svg id='star-view-3' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio>
+                        <path id='star-path-3' d="M54,5 86,105 1,43H107L22,105" fill="#808080"/>
+                        </svg>
+                        <svg id='star-view-4' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio>
+                        <path id='star-path-4' d="M54,5 86,105 1,43H107L22,105" fill="#808080"/>
+                        </svg>
+                        <svg id='star-view-5' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio>
+                        <path id='star-path-5' d="M54,5 86,105 1,43H107L22,105" fill="#808080"/>
+                        </svg>
+                        span(class='clear-rating') Clear
+                .body-shelves-container
+                    div(class='select-shelves-placeholder') <span class='bookshelves-text'>Manage Bookshelves</span>
+                            span(class='shelf-arrow-placeholder') ▾
+                    .shelve-list-container.hidden
+                            ul.shelves__dropdown--default-checks
+                                li.currently-reading
+                                    label(for='currently-reading') Currently Reading
+                                    input(type='radio' id='currently-reading' name='defaultShelf')
+                                li.read
+                                    label(for='read') Read
+                                    input(type='radio' id='read' name='defaultShelf')
+                                li.want-to-read
+                                    label(for='want-to-read') Want to Read
+                                    input(type='radio' id='want-to-read' name='defaultShelf')
+                            ul.shelves__dropdown--created-shelves
+                .review-content-container
+                    p(class='what-did-you-think') What did you think?
+                    textarea(class='review-container__item review-container__item--content' name='content' id='content' placeholder='Enter your review')
+                .submit-container
+                    button.submit-button(type="submit") Post

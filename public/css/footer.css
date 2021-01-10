@@ -6,9 +6,9 @@
 .footer {
   display: flex;
 
-  padding: 24px 7.5vw 0px;
+  padding: 24px 7.5vw 24px;
 
-  height: 112px;
+  height: 100%;
 
   background-color: #f4f0ef;
   border-top: 2px solid #cecbcb;
