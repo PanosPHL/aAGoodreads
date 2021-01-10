@@ -259,7 +259,7 @@ h1 {
 
 .middle-text-container {
   display: flex;
-  padding: 5vh 10vw 0 8vw;
+  padding: 50px 10vw 0 8vw;
   min-width: 1090px;
 }
 
@@ -293,51 +293,45 @@ h1 {
 
 .book-content-container {
   display: flex;
-  margin: 50px 0 60px 130px;
+  margin: 50px 0 60px 0;
+  padding: 0 7%;
 }
 
 .book-content__left--text-container,
 .book-content__right--text-container {
   display: flex;
+  justify-content: space-between;
   color: #706767;
 }
 
 .book-content__left,
 .book-content__right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
   background-color: #c7dee4;
-  width: 800px;
-  height: 275px;
+  width: 42vw;
+  min-width: 472px;
+  min-height: 200px;
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+  padding: 5vh 4vw;
 }
 
 .book-content__left--image-container,
 .book-content__right--image-container {
   display: flex;
+  align-items: center;
+  padding-right: 2%;
 }
 
 .book-content__right {
   margin-left: 50px;
-}
-
-.book-content__right--text-container,
-.book-content__left--text-container {
-  margin-top: 22px;
-  margin-left: 50px;
-  padding-top: 5px;
 }
 
 .book-content__left-text,
 .book-content__right-text {
   font-weight: normal;
   font-size: 23px;
-}
-
-.book-content__left-text--discovered {
-  margin-left: 270px;
-}
-
-.book-content__right-text--discovered {
-  margin-left: 294px;
 }
 
 .book__left-item,
@@ -348,17 +342,10 @@ h1 {
 
 .book-content__left--image-row-container,
 .book-content__right--image-row-container {
-  padding-top: 35px;
-}
-
-.book__left-item,
-.book__right-item {
-  margin-left: 25px;
-}
-
-.book-content__left--cover-1,
-.book-content__right--cover-1 {
-  margin-left: 50px;
+  display: flex;
+  justify-content: space-between;
+  width: 64%;
+  padding-top: 5%;
 }
 
 .book-content__left--discovered-book,
@@ -378,7 +365,6 @@ h1 {
   width: 65px;
   height: 55px;
   margin-left: 40px;
-  padding-top: 72px;
 }
 
 #login {
@@ -396,5 +382,103 @@ h1 {
   .middle-content-container {
     margin-left: 4%;
     margin-right: 2%;
+  }
+}
+
+@media screen and (max-width: 1816px) {
+  .book-content__left--cover-1,
+  .book-content__left--cover-2,
+  .book-content__left--cover-3,
+  .book-content__right--cover-1,
+  .book-content__right--cover-2,
+  .book-content__right--cover-3 {
+    height: 140px;
+    width: 104px;
+  }
+
+  .book-content__left--discovered-book,
+  .book-content__right--discovered-book {
+    height: 166px;
+    width: 116px;
+  }
+
+  .book-content__left--arrow,
+  .book-content__right--arrow {
+    width: 50px;
+    height: 50px;
+    margin-left: 40px;
+  }
+}
+
+@media screen and (max-width: 1756px) {
+  .book-content__left--cover-1,
+  .book-content__left--cover-2,
+  .book-content__left--cover-3,
+  .book-content__right--cover-1,
+  .book-content__right--cover-2,
+  .book-content__right--cover-3 {
+    height: 126px;
+    width: 94px;
+  }
+
+  .book-content__left--arrow,
+  .book-content__right--arrow {
+    width: 45px;
+    height: 45px;
+    margin-left: 40px;
+  }
+
+  .book-content__left--discovered-book,
+  .book-content__right--discovered-book {
+    height: 150px;
+    width: 104px;
+  }
+}
+
+@media screen and (max-width: 1626px) {
+  .book-content__left--cover-1,
+  .book-content__left--cover-2,
+  .book-content__left--cover-3,
+  .book-content__right--cover-1,
+  .book-content__right--cover-2,
+  .book-content__right--cover-3 {
+    height: 113px;
+    width: 85px;
+  }
+
+  .book-content__left--arrow,
+  .book-content__right--arrow {
+    width: 40px;
+    height: 40px;
+    margin-left: 40px;
+  }
+
+  .book-content__right-text,
+  .book-content__left-text {
+    font-size: 20px;
+  }
+
+  .book-content__left--discovered-book,
+  .book-content__right--discovered-book {
+    height: 135px;
+    width: 94px;
+  }
+}
+
+@media screen and (max-width: 1508px) {
+  .book-content__left--cover-1,
+  .book-content__left--cover-2,
+  .book-content__left--cover-3,
+  .book-content__right--cover-1,
+  .book-content__right--cover-2,
+  .book-content__right--cover-3 {
+    height: 102px;
+    width: 77px;
+  }
+
+  .book-content__left--discovered-book,
+  .book-content__right--discovered-book {
+    height: 122px;
+    width: 85px;
   }
 }
