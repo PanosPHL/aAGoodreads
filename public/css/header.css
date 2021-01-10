@@ -54,6 +54,7 @@ header {
 
 .header__right-item {
   text-decoration: none;
+  min-width: 104px;
 }
 
 .header__right-item:not(.header__right-item--profile):hover {
@@ -75,7 +76,7 @@ header {
 }
 
 #myInput {
-  height: 3vh;
+  height: 28px;
   margin-right: 20px;
 }
 
