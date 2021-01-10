@@ -259,16 +259,25 @@ h1 {
 
 .middle-text-container {
   display: flex;
+  padding: 5vh 10vw 0 8vw;
+  min-width: 1090px;
 }
 
 .middle-text__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   text-align: center;
   color: #898989;
 }
 
 .middle-text__left {
-  margin: 50px 0 0 150px;
   width: 550px;
+}
+
+.middle-text__right {
+  width: 42vw;
+  margin-left: 12%;
 }
 
 .middle-text__left--text,
@@ -280,10 +289,6 @@ h1 {
 .middle-text__right--header,
 .middle-text__left--header {
   color: #6f6f6f;
-}
-
-.middle-text__right {
-  margin: 50px 0 0 230px;
 }
 
 .book-content-container {
