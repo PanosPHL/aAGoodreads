@@ -54,6 +54,7 @@ header {
 
 .header__right-item {
   text-decoration: none;
+  min-width: 104px;
 }
 
 .header__right-item:not(.header__right-item--profile):hover {
@@ -75,7 +76,7 @@ header {
 }
 
 #myInput {
-  height: 3vh;
+  height: 28px;
   margin-right: 20px;
 }
 
@@ -98,18 +99,15 @@ header {
 .dropContent {
   position: absolute;
   background-color: white;
-  top: 6.6vh;
-  left: 0.7vw;
+  top: 64px;
   border-radius: 4px;
+  width: 100%;
+  text-align: center;
 }
 
 .dropContent li {
-  padding-left: 0.4vw;
-  padding-right: 1vw;
-  padding-bottom: 0.6vh;
-  padding-top: 0.8vh;
-  font-size: 1.6vh;
-  height: 2.4vh;
+  font-size: 14px;
+  padding: 12px 8px;
 }
 
 .dropContent li:hover {

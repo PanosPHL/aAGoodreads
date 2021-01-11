@@ -1,42 +1,45 @@
 const form = document.getElementById('login');
-const demoButton = document.getElementById('demo');
+const demoButtons = document.getElementsByClassName('demo-user');
 
 form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const formData = new FormData(form);
-    const email = formData.get('email');
-    const password = formData.get('password');
+  e.preventDefault();
+  const formData = new FormData(form);
+  const email = formData.get('email');
+  const password = formData.get('password');
 
-    const body = { email, password };
+  const body = { email, password };
 
-    const res = await fetch('/api/users/token', {
-        method: 'POST',
-        body: JSON.stringify(body),
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    });
-    const data = await res.json();
-    if (!res.ok) {
-        alert(data.message);
-        return;
-    }
+  const res = await fetch('/api/users/token', {
+    method: 'POST',
+    body: JSON.stringify(body),
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
+  const data = await res.json();
+  if (!res.ok) {
+    alert(data.message);
+    return;
+  }
 
-    window.location.href = '/my-books';
+  window.location.href = '/my-books';
 });
 
-demoButton.addEventListener('click', async e => {
+for (const button of demoButtons) {
+  button.addEventListener('click', async (e) => {
+    e.preventDefault();
     const body = { email: 'santa@gmail.com', password: 'password' };
 
     const res = await fetch('/api/users/token', {
-        method: 'POST',
-        body: JSON.stringify(body),
-        headers: {
-            'Content-Type': 'application/json'
-        }
+      method: 'POST',
+      body: JSON.stringify(body),
+      headers: {
+        'Content-Type': 'application/json',
+      },
     });
 
     if (res.ok) {
-        window.location.href = '/my-books';
+      window.location.href = '/my-books';
     }
-});
+  });
+}

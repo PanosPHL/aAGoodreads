@@ -20,7 +20,7 @@ html(lang="en")
                             input(class='log-in__inputs log-in__inputs--email' type='email' name='email' id='login-email' placeholder='Email Address')
                             input(class='log-in__inputs log-in__inputs--password' type='password' name='password' id='login-password' placeholder='Password')
                             button(class='log-in__inputs log-in__inputs--submit' type="submit") Sign In
-                            button(class='log-in__inputs log-in__inputs--demo-user' type="button" id="demo") Demo User
+                            button(class='log-in__inputs log-in__inputs--demo-user demo-user' type="button") Demo User
                         .log-in__bottom-container
                             input(class='log-in__bottom log-in__bottom--remember-me' type="checkbox" name="remember-me" id='remember-me')
                             label(for='remember-me' class='log-in__bottom log-in__bottom--remember-me-text') Remember Me
@@ -39,9 +39,8 @@ html(lang="en")
                                 <p class='sign-up__disclaimer'> By clicking "Sign Up" I agree to the Goodreads <a class='sign-up__disclaimer--link' href='/terms-of-service'>Terms of Service</a> confirm that I am at least 13 years old.
         .middle-content-container
             .middle-content__left
-                .middle-content__left--text-container
-                    h3.left__text--header Wanna take a look around?
-                    a(class='left__item left__item--link' id='demo') Explore as Demo User
+                h3.left__text--header Wanna take a look around?
+                a(class='left__item left__item--link demo-user') Explore as Demo User
             .middle-content__right
                 img(class='right__item right__item--pic' src='https://www.onthisday.com/images/people/mahatma-gandhi-medium.jpg')
                 .middle-content__right--text-container

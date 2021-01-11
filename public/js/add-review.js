@@ -30,7 +30,7 @@ const populateBookContent = async () => {
   const book = await getBook();
 
   const header = document.querySelector('.body-header-container__item--text');
-  header.innerHTML = `<a class='book-link-header' href='/books/${bookId}'>${book.title}</a> &gt; Review &gt; Edit`;
+  header.innerHTML = `<a class='book-link-header' href='/books/${bookId}'>${book.title}</a> &gt; Review &gt; Add`;
 
   const cover = (document.querySelector('.book-container__item--cover').src =
     book.cover);

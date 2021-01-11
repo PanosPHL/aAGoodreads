@@ -1,157 +1,159 @@
 * {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 }
 
 body {
-    font-family: Helvetica;
+  font-family: Helvetica;
 }
 
 .content-container {
-    min-height: 750px;
-    width: 50%;
-    margin: 40px auto 60px auto;
+  min-height: 750px;
+  width: 951px;
+  margin: 40px auto 60px auto;
 
-    padding: 0px 40px 0px 40px;
+  padding: 0px 40px 0px 40px;
 }
 
 .book-list-item {
-    display: flex;
-    justify-content: space-between;
-    padding: 2% 4%;
+  display: flex;
+  padding: 2% 4%;
 
-    border-bottom: 1px solid #D7D7D7;
+  border-bottom: 1px solid #d7d7d7;
 }
 
 .last {
-    border-bottom: none;
+  border-bottom: none;
 }
 
 .book-list-item__cover {
-    width: 128px;
-    height: 192px;
+  width: 128px;
+  height: 192px;
 }
 
 .book-list-item__text-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 96px;
-    width: 480px;
-    margin: auto 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 96px;
+  width: 480px;
+  margin: auto 48px auto 72px;
 }
 
 .book-list-item__title {
-    font-size: 24px;
+  font-size: 24px;
 }
 
 .book-list-item__title > a {
-    color: #333333;
-    text-decoration: none;
+  color: #333333;
+  text-decoration: none;
 }
 
-.book-list-item__authors, .book-list-item__avg-rating-and-pub {
-    display: block;
-    margin-top: 10px;
-    font-size: 14px;
-    color: #79796C;
+.book-list-item__authors,
+.book-list-item__avg-rating-and-pub {
+  display: block;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #79796c;
 }
 
 .book-list-item__authors a {
-    text-decoration: none;
-    color: #79796C;
+  text-decoration: none;
+  color: #79796c;
 }
 
 .body-shelves-container {
-    position: relative;
-    height: 2vh;
-    padding: 0.4vh;
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    border-radius: 4px;
-    width: 10vw;
-    font-size: 1.8vh;
-    background-color: #dfdfdf;
+  position: relative;
+  height: 20px;
+  padding: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  width: 192px;
+  font-size: 16.8px;
+  background-color: #dfdfdf;
 }
 
 .bookshelves-text {
-    display: block;
-    width: 176px;
-    margin: 0 auto;
+  display: block;
+  width: 176px;
+  margin: 0 auto;
 }
 
-.bookshelves-text:hover, .saving:hover {
-    cursor: pointer;
+.bookshelves-text:hover,
+.saving:hover {
+  cursor: pointer;
 }
 
 .saving {
-    display: block;
-    width: 92px;
-    margin: 0 auto;
+  display: block;
+  width: 92px;
+  margin: 0 auto;
 }
 
 .shelve-list-container {
-    position: absolute;
-    left: -2px;
-    top: 3.4vh;
-    padding: 1.4vh 0 1.4vh 2.2vh;
-    background-color: rgb(233, 233, 233);
-    z-index: 0;
-    border-radius: 4px;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    width: 9.4vw;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
+  position: absolute;
+  left: -2px;
+  top: 30px;
+  padding: 14px 0 12px 18px;
+  background-color: rgb(233, 233, 233);
+  z-index: 0;
+  border-radius: 4px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  width: 188px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
 .hidden {
-    display: none;
+  display: none;
 }
 
 .no-pointer-events {
-    pointer-events: none;
+  pointer-events: none;
 }
 
 .content-container__header-container {
-    margin: 30px auto;
-    padding: 0 4%;
+  margin: 30px auto;
+  padding: 0 4%;
 }
 
 .browse-header {
-    font-size: 30px;
-    font-weight: 550;
-    color: #382110;
+  font-size: 30px;
+  font-weight: 550;
+  color: #382110;
 }
 
 .showing {
-    font-size: 14px;
-    padding: 0 4%;
-    color: #79796C;
+  font-size: 14px;
+  padding: 0 4%;
+  color: #79796c;
 }
 
-.default-shelves, .created-shelves {
-    list-style: none;
+.default-shelves,
+.created-shelves {
+  list-style: none;
 }
 
 .shelve-and-review-container {
-    display: flex;
-    height: 96px;
-    flex-direction: column;
-    justify-content: space-between;
-    margin: auto 0;
+  display: flex;
+  height: 96px;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: auto 0;
 }
 
 .review-link-container {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .review-link {
-    margin: 0 auto;
-    text-decoration: none;
-    padding: 0.6vh;
-    background-color: #DFDFDF;
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    border-radius: 4px;
-    color: black;
+  margin: 0 auto;
+  text-decoration: none;
+  padding: 0.6vh;
+  background-color: #dfdfdf;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  color: black;
 }
