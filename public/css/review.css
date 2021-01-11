@@ -11,7 +11,7 @@ body:not(.header__left) {
 .body-content-container {
   display: flex;
   flex-direction: column;
-  padding: 1% 18% 2%;
+  padding: 1% 24% 2%;
   margin-bottom: 2%;
   min-width: 676px;
   min-height: 672px;
@@ -129,7 +129,7 @@ svg {
 .shelve-list-container {
   position: absolute;
   left: -2px;
-  top: 30px;
+  top: 40px;
   padding: 14px 0 12px 18px;
   background-color: rgb(233, 233, 233);
   z-index: 0;
@@ -202,4 +202,12 @@ li:hover {
 
 .star-on-permanent {
   fill: #f3b421;
+}
+
+.no-pointer-events {
+  pointer-events: none;
+}
+
+.saving {
+  margin-left: 60px;
 }

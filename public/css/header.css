@@ -10,7 +10,8 @@ header {
 .header-container {
   display: flex;
   height: 71px;
-  padding: 0 1vw 0 7.5vw;
+  padding: 0 4% 0 7.5%;
+  min-width: 1270px;
   justify-content: space-between;
   border-bottom: 2px solid #a0a0a0;
 }
