@@ -305,7 +305,7 @@ document.addEventListener('DOMContentLoaded', async (event) => {
 
         if (res.ok) {
           setTimeout(() => {
-            manageShelves.innerHTML = `Manage Bookshelves<span class='self-arrow-placeholder'>▾</span>`;
+            manageShelves.innerHTML = originalInnerHTML;
             manageShelves.classList.remove('no-pointer-events');
             manageShelves.classList.remove('saving');
           }, 250);

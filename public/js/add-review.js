@@ -1,5 +1,6 @@
 const bookId = Number(new URL(window.location).toString().split('/')[6]);
 let rating;
+let prevState = {};
 
 const getBook = async () => {
   const res = await fetch(`/api/books/${bookId}`);
@@ -94,6 +95,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   populateBookContent();
 
   const stars = document.querySelector('.stars');
+  const manageShelves = document.querySelector('.select-shelves-placeholder');
   let clickListener = true;
 
   const handleStarMouseover = (event) => {
@@ -162,15 +164,60 @@ document.addEventListener('DOMContentLoaded', (event) => {
     stars.addEventListener('mouseover', handleStarMouseover);
   });
 
-  document
-    .querySelector('.select-shelves-placeholder')
-    .addEventListener('click', (event) => {
-      document
-        .querySelector('.shelve-list-container')
-        .classList.toggle('hidden');
-    });
+  manageShelves.addEventListener('click', async ({ target }) => {
+    if (
+      !target.classList.contains('select-shelves-placeholder') &&
+      !target.classList.contains('bookshelves-text') &&
+      !target.classList.contains('shelf-arrow-placeholder')
+    ) {
+      return;
+    }
 
-  const form = document.querySelector('form');
+    const originalInnerHTML =
+      'Manage Booshelves <span class="shelf-arrow-placeholder">▾</span>';
+
+    document.querySelector('.shelve-list-container').classList.toggle('hidden');
+    const formData = new FormData(document.querySelector('.shelf-form'));
+
+    if (!shelveListContainer.classList.contains('hidden')) {
+      prevState = {
+        defaultShelf: formData.getAll('defaultShelf'),
+        createdShelf: formData.getAll('createdShelf'),
+      };
+    } else {
+      const body = {
+        defaultShelf: formData.getAll('defaultShelf'),
+        createdShelf: formData.getAll('createdShelf'),
+      };
+
+      if (
+        compareState(prevState['defaultShelf'], body['defaultShelf']) ||
+        compareState(prevState['createdShelf'], body['createdShelf'])
+      ) {
+        manageShelves.innerHTML = 'Saving...';
+        manageShelves.classList.add('no-pointer-events');
+        manageShelves.classList.add('saving');
+
+        const res = await fetch(`/api/books/${id}`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(body),
+        });
+
+        if (res.ok) {
+          setTimeout(() => {
+            manageShelves.innerHTML = originalInnerHTML;
+            manageShelves.classList.remove('no-pointer-events');
+            manageShelves.classList.remove('saving');
+          }, 250);
+        }
+      }
+    }
+  });
+
+  const form = document.querySelector('.review-form');
   form.addEventListener('submit', async (event) => {
     event.preventDefault();
     const formData = new FormData(form);
@@ -187,22 +234,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
       },
     });
 
-    const body2 = {};
-    for (const key of formData.keys()) {
-      if (key !== 'content') {
-        body2[key] = formData.getAll(key);
-      }
-    }
-
-    const res2 = await fetch(`/api/books/${bookId}`, {
-      method: 'POST',
-      body: JSON.stringify(body2),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
-
-    if (res.ok && res2.ok) {
+    if (res.ok) {
       window.location.href = '/my-books';
     }
   });
