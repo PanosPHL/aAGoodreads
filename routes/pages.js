@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const browseRouter = require('./browse-books');
 const myBooksRouter = require('./my-books');
-const editBookshelvesRouter = require('./edit-bookshelves');
 const reviewRouter = require('./reviews');
 const searchRouter = require('./search');
 const jwt = require('jsonwebtoken');
@@ -16,7 +15,6 @@ router.use('/books', booksRouter);
 router.use('/my-books', myBooksRouter);
 router.use('/browse', browseRouter);
 router.use('/reviews', reviewRouter);
-router.use('/edit-bookshelves', editBookshelvesRouter);
 router.use('/search', searchRouter);
 
 router.get(
