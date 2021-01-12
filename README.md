@@ -97,6 +97,10 @@ When the request hits the Express server, it first checks which default bookshel
 <img src='./wiki/images/bookshelf-server-2.PNG'/>
 </div>
 
+<h2 id="futurefeatures">Future Features</h2>
+
+- None planned at the moment
+
 <h2 id="credits">Credits</h2>
 
 - All book cover images are pulled directly from [goodreads.com](https://goodreads.com)
